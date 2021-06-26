@@ -135,38 +135,234 @@
                               <TableColumn prefWidth="72.0" text="status" />
                           </columns>
                         </TableView>
-                        <Pane layoutX="696.0" layoutY="60.0" prefHeight="430.0" prefWidth="217.0" style="-fx-background-color: #78e08f;">
+                        <Pane layoutX="696.0" layoutY="60.0" prefHeight="430.0" prefWidth="217.0" style="-fx-background-color: #38ada9;">
                            <children>
                               <ImageView fitHeight="178.0" fitWidth="217.0" layoutY="-1.0" pickOnBounds="true">
                                  <image>
-                                    <Image url="@img/field3.jpg" />
+                                    <Image url="@img/field2.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="60.0" layoutY="187.0" text="Stadium Name">
+                              <Label layoutX="60.0" layoutY="187.0" text="Stadium Name" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="224.0" text="Stadium Name">
+                              <Label layoutX="14.0" layoutY="224.0" text="Location:" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="270.0" text="Stadium Name">
+                              <Label layoutX="14.0" layoutY="263.0" text="Capacity:" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="24.0" layoutY="280.0" text="Stadium Name">
+                              <Label layoutX="15.0" layoutY="304.0" text="Seats:" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
+                              <Label layoutX="15.0" layoutY="349.0" text="Price:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="98.0" layoutY="224.0" text="Dar-es-salaam" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="98.0" layoutY="263.0" text="1000people" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="99.0" layoutY="304.0" text="6000" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="99.0" layoutY="349.0" text="\$200" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="14.0" layoutY="385.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="197.0" style="-fx-background-color: #78e08f;" text="Book Now" textFill="WHITE" />
                            </children>
                         </Pane>
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="userEvents">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="22.0" layoutY="14.0" text="All Events" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Label>
+                        <TableView layoutX="37.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0">
+                           <columns>
+                              <TableColumn prefWidth="39.0" text="no" />
+                              <TableColumn prefWidth="111.0" text="Photo" />
+                              <TableColumn prefWidth="104.0" text="Event" />
+                              <TableColumn prefWidth="84.0" text="Date" />
+                              <TableColumn prefWidth="78.0" text="location" />
+                              <TableColumn prefWidth="64.0" text="seats" />
+                              <TableColumn prefWidth="85.0" text="Price" />
+                              <TableColumn prefWidth="72.0" text="status" />
+                           </columns>
+                        </TableView>
+                        <Pane layoutX="696.0" layoutY="62.0" prefHeight="430.0" prefWidth="217.0" style="-fx-background-color: #38ada9;">
+                           <children>
+                              <ImageView fitHeight="178.0" fitWidth="217.0" layoutY="-1.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/event4.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="60.0" layoutY="187.0" text="Stadium Name" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="224.0" text="Location:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="263.0" text="Date:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="304.0" text="Free seats:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="349.0" text="Price:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="98.0" layoutY="224.0" text="Dar-es-salaam" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="98.0" layoutY="263.0" text="20/06/2021" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="107.0" layoutY="304.0" text="6000" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="99.0" layoutY="349.0" text="\$200" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="14.0" layoutY="385.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="197.0" style="-fx-background-color: #78e08f;" text="Book Now" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="userVenues">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="21.0" layoutY="22.0" text="All Venues" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Label>
+                        <TableView layoutX="38.0" layoutY="66.0" prefHeight="433.0" prefWidth="640.0">
+                           <columns>
+                              <TableColumn prefWidth="39.0" text="no" />
+                              <TableColumn prefWidth="111.0" text="Photo" />
+                              <TableColumn prefWidth="104.0" text="Event" />
+                              <TableColumn prefWidth="84.0" text="Date" />
+                              <TableColumn prefWidth="78.0" text="location" />
+                              <TableColumn prefWidth="64.0" text="seats" />
+                              <TableColumn prefWidth="85.0" text="Price" />
+                              <TableColumn prefWidth="72.0" text="status" />
+                           </columns>
+                        </TableView>
+                        <Pane layoutX="696.0" layoutY="68.0" prefHeight="430.0" prefWidth="217.0" style="-fx-background-color: #38ada9;">
+                           <children>
+                              <ImageView fitHeight="178.0" fitWidth="217.0" layoutY="-1.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/venue1.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="60.0" layoutY="187.0" text="Venue Name" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="224.0" text="Location:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="263.0" text="Capacity:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="304.0" text="Seats:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="349.0" text="Price:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="98.0" layoutY="224.0" text="Dar-es-salaam" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="98.0" layoutY="263.0" text="1000people" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="99.0" layoutY="304.0" text="6000" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="99.0" layoutY="349.0" text="\$200" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="14.0" layoutY="385.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="197.0" style="-fx-background-color: #78e08f;" text="Book Now" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Untitled Tab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
