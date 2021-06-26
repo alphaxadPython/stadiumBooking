@@ -613,13 +613,130 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="29.0" layoutY="14.0" text="Book This Event" textFill="#079992">
+                        <Label layoutX="29.0" layoutY="14.0" text="Book Seat In this Event" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
+                        <Pane layoutX="34.0" layoutY="65.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
+                           <children>
+                              <ImageView fitHeight="222.0" fitWidth="357.0" layoutY="-1.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/event4.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="73.0" layoutY="233.0" text="Event Name Here" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="276.0" text="Location:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="315.0" text="Date:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="46.0" layoutY="356.0" text="Seats:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="42.0" layoutY="395.0" text="Price:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="178.0" layoutY="276.0" text="Dar-es-salaam" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="174.0" layoutY="317.0" text="12/20/2020" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="175.0" layoutY="362.0" text="6000" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="175.0" layoutY="400.0" text="\$200" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="32.0" layoutY="473.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="View Other Events" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="40.0" layoutY="438.0" text="Control No:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="171.0" layoutY="441.0" text="ASD12345678945" textFill="#b93333">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="454.0" layoutY="66.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
+                           <children>
+                              <Label layoutX="95.0" layoutY="26.0" text="Event Name Here" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="36.0" layoutY="74.0" text="Full Name" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
+                              <Label layoutX="31.0" layoutY="154.0" text="Phone" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
+                              <Label layoutX="31.0" layoutY="233.0" text="Seat No:" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="36.0" layoutY="314.0" text="Payment Receipt" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
+                              <Button layoutX="33.0" layoutY="397.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="46.0" fitWidth="305.0" layoutX="34.0" layoutY="454.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@img/pay2.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField layoutX="35.0" layoutY="265.0" prefHeight="37.0" prefWidth="291.0" promptText="seat No" />
+                           </children>
+                        </Pane>
                      </children>
                   </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="MyBookings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
         </tabs>
