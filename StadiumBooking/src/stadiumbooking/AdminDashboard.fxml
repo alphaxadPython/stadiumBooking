@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1154.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="stadiumbooking.AdminDashboardController">
+   <children>
+      <MenuBar layoutX="89.0" layoutY="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="7.0" layoutY="25.0" prefHeight="675.0" prefWidth="134.0" style="-fx-background-color: #78e08f;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Button fx:id="adminEvents" layoutX="2.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#eventAdmin" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #78e08f;" text="Events" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="Admin" layoutX="2.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#goHome" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #78e08f;" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="adminVenues" layoutX="2.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#stadiumAdmin" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #78e08f;" text="Stadiums" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="adminBookinghs" layoutX="2.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#Bookings" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #78e08f;" text="Bookings" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="11.0" layoutY="40.0" prefHeight="49.0" prefWidth="106.0" text="Stadium" textFill="WHITE">
+               <font>
+                  <Font name="Monotype Corsiva" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="83.0" prefHeight="33.0" prefWidth="75.0" text="Bookings" textFill="#079992">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TabPane fx:id="adminTab" layoutX="134.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="134.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <tabs>
+          <Tab text="Events">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="413.0" layoutY="90.0" prefHeight="492.0" prefWidth="593.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="No" />
+                              <TableColumn prefWidth="75.0" text="Name" />
+                              <TableColumn prefWidth="75.0" text="Location" />
+                              <TableColumn prefWidth="75.0" text="Capacity" />
+                              <TableColumn prefWidth="75.0" text="Seats" />
+                              <TableColumn prefWidth="75.0" text="Price" />
+                              <TableColumn prefWidth="75.0" text="AccountNo" />
+                              <TableColumn prefWidth="75.0" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Pane layoutX="14.0" layoutY="90.0" prefHeight="493.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
+                           <children>
+                              <Label layoutX="30.0" layoutY="223.0" text="Seats" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="105.0" layoutY="26.0" text="Register Event" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="36.0" layoutY="74.0" text="Fullname" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="307.0" promptText="fullname" />
+                              <Label layoutX="31.0" layoutY="150.0" text="Location" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="35.0" layoutY="178.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <Label layoutX="36.0" layoutY="306.0" text="Account Number" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="37.0" layoutY="334.0" prefHeight="37.0" prefWidth="300.0" promptText="Receipt no" />
+                              <Button layoutX="33.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="REGISTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="202.0" layoutY="148.0" text="Date" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="206.0" layoutY="176.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField layoutX="34.0" layoutY="251.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <Label layoutX="201.0" layoutY="221.0" text="Cost" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="205.0" layoutY="249.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="20.0" layoutY="33.0" text="Manage events:" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="515.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="594.0">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="783.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Stadiums">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Manage Stadiums &amp; Venues:" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <TableView layoutX="414.0" layoutY="71.0" prefHeight="507.0" prefWidth="593.0" AnchorPane.leftAnchor="414.0" AnchorPane.topAnchor="71.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="No" />
+                            <TableColumn prefWidth="75.0" text="Name" />
+                              <TableColumn prefWidth="75.0" text="Location" />
+                              <TableColumn prefWidth="75.0" text="Capacity" />
+                              <TableColumn prefWidth="75.0" text="Seats" />
+                              <TableColumn prefWidth="75.0" text="Price" />
+                              <TableColumn prefWidth="75.0" text="AccountNo" />
+                              <TableColumn prefWidth="75.0" text="Status" />
+                          </columns>
+                        </TableView>
+                        <Pane layoutX="21.0" layoutY="70.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="70.0">
+                           <children>
+                              <Label layoutX="30.0" layoutY="223.0" text="Seats" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="26.0" text="Register Stadium / Venue" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="36.0" layoutY="74.0" text="Fullname" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="307.0" promptText="fullname" />
+                              <Label layoutX="31.0" layoutY="150.0" text="Location" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="35.0" layoutY="178.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <Label layoutX="36.0" layoutY="375.0" text="Account Number" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="37.0" layoutY="403.0" prefHeight="37.0" prefWidth="300.0" promptText="Receipt no" />
+                              <Button layoutX="33.0" layoutY="458.0" mnemonicParsing="false" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="REGISTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="202.0" layoutY="148.0" text="Capacity" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="206.0" layoutY="176.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField layoutX="34.0" layoutY="251.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <Label layoutX="201.0" layoutY="221.0" text="Price" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="205.0" layoutY="249.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <Label layoutX="34.0" layoutY="301.0" text="Cartegory" textFill="TEAL">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox layoutX="36.0" layoutY="327.0" prefHeight="41.0" prefWidth="302.0" />
+                           </children>
+                        </Pane>
+                        <Button layoutX="527.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="777.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="StadiumVenuBook">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="62.0" layoutY="76.0" prefHeight="507.0" prefWidth="909.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="No" />
+                              <TableColumn prefWidth="138.0" text="Username" />
+                              <TableColumn prefWidth="172.0" text="Venu/Stadium" />
+                              <TableColumn prefWidth="140.0" text="Phone" />
+                              <TableColumn prefWidth="135.0" text="Date" />
+                              <TableColumn prefWidth="140.0" text="Receipt" />
+                              <TableColumn prefWidth="108.0" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="23.0" layoutY="23.0" text="Stadiums &amp; Venue Bookings:" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="EventBookings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="40.0" layoutY="80.0" prefHeight="507.0" prefWidth="909.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="No" />
+                              <TableColumn prefWidth="138.0" text="Username" />
+                              <TableColumn prefWidth="172.0" text="Event" />
+                              <TableColumn prefWidth="140.0" text="Phone" />
+                              <TableColumn prefWidth="135.0" text="Date" />
+                              <TableColumn prefWidth="140.0" text="Receipt" />
+                              <TableColumn prefWidth="108.0" text="seat No" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="22.0" layoutY="29.0" text="Event bookings:" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="home">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="26.0" text="Dashborad:" textFill="#079992">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="107.0" layoutY="74.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #b8e994;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="4.0" text="Taotal Stadiums" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="337.0" layoutY="74.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #b8e994;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="4.0" text="Taotal Venues" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="574.0" layoutY="74.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #b8e994;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="4.0" text="Taotal Events" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="113.0" layoutY="192.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #b8e994;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="4.0" text="Stadium Bookings" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="343.0" layoutY="192.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #b8e994;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="4.0" text="Venue Bookings" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="580.0" layoutY="192.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #b8e994;">
+                           <children>
+                              <Label layoutX="10.0" layoutY="4.0" text="Event Bookings" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                                 <font>
+                                    <Font name="Arial Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Separator layoutX="28.0" layoutY="316.0" prefHeight="2.0" prefWidth="791.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
