@@ -22,6 +22,8 @@ public class AdminDashboardController implements Initializable {
     private Button adminBookinghs;
     @FXML
     private TabPane adminTab;
+    @FXML
+    private Button adminBookinghs1;
 
     /**
      * Initializes the controller class.
@@ -33,32 +35,36 @@ public class AdminDashboardController implements Initializable {
 
     @FXML
     private void eventAdmin(MouseEvent event) {
-         adminTab.getSelectionModel().select(0);
+         adminTab.getSelectionModel().select(1);
 
     }
 
     @FXML
     private void goHome(MouseEvent event) {
-         adminTab.getSelectionModel().select(4);
+         adminTab.getSelectionModel().select(0);
 
         
     }
 
     @FXML
     private void stadiumAdmin(MouseEvent event) {
-        adminTab.getSelectionModel().select(1);
+        adminTab.getSelectionModel().select(2);
 
     }
 
     @FXML
     private void Bookings(MouseEvent event) {
-      adminTab.getSelectionModel().select(3);
+      adminTab.getSelectionModel().select(4);
 
     }
 
     @FXML
-    private void myBookings(MouseEvent event) {
+    private void StadBook(MouseEvent event) {
+       adminTab.getSelectionModel().select(3);
+
     }
+
+  
 
 
  
