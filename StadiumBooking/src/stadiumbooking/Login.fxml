@@ -49,6 +49,11 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
+      <Label fx:id="close" layoutX="638.0" layoutY="4.0" onMouseClicked="#closeLogin" text="x" textFill="#e80d0d">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

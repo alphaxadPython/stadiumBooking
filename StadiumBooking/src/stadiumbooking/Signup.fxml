@@ -61,6 +61,11 @@
       </Label>
       <PasswordField layoutX="363.0" layoutY="283.0" prefHeight="37.0" prefWidth="120.0" promptText="password" />
       <PasswordField layoutX="511.0" layoutY="283.0" prefHeight="37.0" prefWidth="136.0" promptText="Confirm Password" />
+      <Label fx:id="close" layoutX="638.0" layoutY="4.0" onMouseClicked="#closeSignup" text="x" textFill="#e80d0d">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+      </Label>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />
