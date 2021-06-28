@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="stadiumbooking.SignupController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.SignupController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="351.0" layoutX="66.0" layoutY="76.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -45,7 +44,7 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="363.0" layoutY="333.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="291.0" style="-fx-background-color: #78e08f;" text="Signup" textFill="WHITE">
+      <Button fx:id="signup" layoutX="363.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#signUser" prefHeight="25.0" prefWidth="291.0" style="-fx-background-color: #78e08f;" text="Signup" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -55,7 +54,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="532.0" layoutY="376.0" text="Login Here!!" textFill="RED">
+      <Label fx:id="login" layoutX="532.0" layoutY="376.0" onMouseClicked="#loginForm" text="Login Here!!" textFill="RED">
          <font>
             <Font name="Arial" size="14.0" />
          </font>

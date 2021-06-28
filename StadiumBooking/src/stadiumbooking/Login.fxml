@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="stadiumbooking.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.LoginController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="351.0" pickOnBounds="true">
          <image>
@@ -35,7 +34,7 @@
          </font>
       </Label>
       <PasswordField layoutX="369.0" layoutY="220.0" prefHeight="37.0" prefWidth="291.0" promptText="password" />
-      <Button layoutX="363.0" layoutY="293.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="291.0" style="-fx-background-color: #78e08f;" text="Login" textFill="WHITE">
+      <Button fx:id="login" layoutX="363.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#loginUser" prefHeight="25.0" prefWidth="291.0" style="-fx-background-color: #78e08f;" text="Login" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -45,7 +44,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="537.0" layoutY="356.0" text="Signup Here!!" textFill="RED">
+      <Label fx:id="signup" layoutX="537.0" layoutY="356.0" onMouseClicked="#SignupForm" text="Signup Here!!" textFill="RED">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
