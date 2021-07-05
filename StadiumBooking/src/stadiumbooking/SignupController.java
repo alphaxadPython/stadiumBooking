@@ -2,6 +2,9 @@ package stadiumbooking;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,20 +42,19 @@ public class SignupController implements Initializable {
     private void signUser(MouseEvent event) {
         try {
             String pwd1 = password.getText();
-           String  pwd2 = password2.getText();
+            String pwd2 = password2.getText();
             if (username.getText().isEmpty() || phone.getText().isEmpty() || password.getText().isEmpty() || password2.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Please Fill All fields!!");
                 alert.setTitle("Empty Fields");
                 alert.showAndWait();
-            } else if (pwd1.equals(pwd2)){
+            } else if (pwd1.equals(pwd2)) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
                 Stage stage = (Stage) signup.getScene().getWindow();
                 Scene scene = new Scene(loader.load());
                 stage.setScene(scene);
             } else {
-                
-                
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("The two passwords do not match");
                 alert.setTitle("Empty Fields");
@@ -76,6 +78,34 @@ public class SignupController implements Initializable {
         }
     }
 
+    private void RegisterUser() {
+        String query = "Insert into signup values("+ username.getText() + ",'" + password.getText() + "','" + phone.getText() + "')";
+        executeQuery(query);
+    }
+
+//    function to execute the insert queryprivate
+
+    void executeQuery(String query) {
+        Connection conn = ConnectDB();
+        Statement st;
+        try {
+            st = conn.createStatement();
+            st.executeUpdate(query);
+        } catch (Exception e) {
+            System.out.println("Something went wrong here");
+        }
+    }
+
+    
+      Connection conn = null;
+    public Connection ConnectDB() {
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/booking", "root", "");
+            return conn;
+        }catch (Exception e) {return null;}
+ 
+
+    }
 //    @FXML
 //    private void closeSignup(MouseEvent event) {
 ////         close the stage
