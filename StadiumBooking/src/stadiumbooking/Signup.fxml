@@ -27,13 +27,13 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="363.0" layoutY="103.0" prefHeight="37.0" prefWidth="291.0" promptText="Username" />
+      <TextField fx:id="username" layoutX="363.0" layoutY="103.0" prefHeight="37.0" prefWidth="291.0" promptText="Username" />
       <Label layoutX="363.0" layoutY="155.0" text="Phone:" textFill="TEAL">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="363.0" layoutY="192.0" prefHeight="37.0" prefWidth="291.0" promptText="Phone:" />
+      <TextField fx:id="phone" layoutX="363.0" layoutY="192.0" prefHeight="37.0" prefWidth="291.0" promptText="Phone:" />
       <Label layoutX="363.0" layoutY="248.0" text="Password" textFill="TEAL">
          <font>
             <Font name="Arial" size="16.0" />
@@ -59,13 +59,8 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <PasswordField layoutX="363.0" layoutY="283.0" prefHeight="37.0" prefWidth="120.0" promptText="password" />
-      <PasswordField layoutX="511.0" layoutY="283.0" prefHeight="37.0" prefWidth="136.0" promptText="Confirm Password" />
-      <Label fx:id="close" layoutX="638.0" layoutY="4.0" onMouseClicked="#closeSignup" text="x" textFill="#e80d0d">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
-         </font>
-      </Label>
+      <PasswordField fx:id="password" layoutX="363.0" layoutY="283.0" prefHeight="37.0" prefWidth="120.0" promptText="password" />
+      <PasswordField fx:id="password2" layoutX="511.0" layoutY="283.0" prefHeight="37.0" prefWidth="136.0" promptText="Confirm Password" />
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

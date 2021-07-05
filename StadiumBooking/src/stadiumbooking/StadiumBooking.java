@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 public class StadiumBooking extends Application {
@@ -20,7 +19,7 @@ public class StadiumBooking extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-         stage.initStyle(StageStyle.UNDECORATED);
+//         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
         

@@ -15,12 +15,11 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 public class LoginController implements Initializable {
     
-     private double xOffset = 0;
+    private double xOffset = 0;
     private double yOffset = 0;
 
     @FXML
@@ -43,7 +42,6 @@ public class LoginController implements Initializable {
 
             Scene scene = new Scene(loader);
             stage.setScene(scene);
-        
 //            setting stage on center
              javafx.geometry.Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
@@ -67,13 +65,13 @@ public class LoginController implements Initializable {
         }
     }
 
-    @FXML
-    private void closeLogin(MouseEvent event) {
-//        close the stage
-             Stage stage = (Stage) close.getScene().getWindow();
-            
-             stage.close();
-    }
+//    @FXML
+//    private void closeLogin(MouseEvent event) {
+////        close the stage
+//             Stage stage = (Stage) close.getScene().getWindow();
+//            
+//             stage.close();
+//    }
 
     
     
