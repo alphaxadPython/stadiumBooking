@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javax.swing.table.DefaultTableModel;
 
 public class AdminDashboardController implements Initializable {
 
@@ -53,21 +56,15 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private TableView<events> eventTable;
     @FXML
-    private TableColumn<events, String> eventNo;
-    @FXML
     private TableColumn<events, String> eventNamecol;
     @FXML
     private TableColumn<events, String> eventLocationCol;
-    @FXML
-    private TableColumn<events, String> eventCapacityCol;
     @FXML
     private TableColumn<events, String> eventSeatsCol;
     @FXML
     private TableColumn<events, String> eventPriceCol;
     @FXML
     private TableColumn<events, String> eventAccountCol;
-    @FXML
-    private TableColumn<events, String> eventStatusCol;
     @FXML
     private TextField eventFullname;
     @FXML
@@ -155,12 +152,19 @@ public class AdminDashboardController implements Initializable {
     private TableColumn<?, ?> eventBookReceiptCol;
     @FXML
     private TableColumn<?, ?> eventBookSaetNOCol;
+    @FXML
+    private TableColumn<?, ?> eventDateCol;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            eventsTable();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ObservableList<String> options = FXCollections.observableArrayList(
                 "Stadium",
                 "Venue"
@@ -225,6 +229,7 @@ public class AdminDashboardController implements Initializable {
                 eventSeats.setText("");
                 eventCost.setText("");
                 eventAccount.setText("");
+                eventsTable();
 
             }
         } catch (Exception e) {
@@ -270,8 +275,8 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    public ArrayList<events> getUsersList() throws SQLException {
-        ArrayList<events> userlist = new ArrayList<>();
+    public ObservableList<events> getUsersList() throws SQLException {
+        ObservableList<events> userlist = FXCollections.observableArrayList();
         Connection conn = DBconnection.getConnection();
         String query = "Select * from events";
         Statement st;
@@ -292,10 +297,14 @@ public class AdminDashboardController implements Initializable {
     }
 
     public void eventsTable() throws SQLException {
-        ObservableList<events> list = getUsersList();
-        eventNamecol.setCellValueFactory(new PropertyValueFactory<events, String>("id"));
-        eventLocationCol.setCellValueFactory(new PropertyValueFactory<events, String>("username"));
-        eventCapacityCol.setCellValueFactory(new PropertyValueFactory<events, String>("email"));
+        ObservableList<events> list = (ObservableList<events>) getUsersList();
+        eventNamecol.setCellValueFactory(new PropertyValueFactory<events, String>("name"));
+        eventLocationCol.setCellValueFactory(new PropertyValueFactory<events, String>("location"));
+        eventSeatsCol.setCellValueFactory(new PropertyValueFactory<events, String>("seat"));
+        eventPriceCol.setCellValueFactory(new PropertyValueFactory<events, String>("price"));
+        eventAccountCol.setCellValueFactory(new PropertyValueFactory<events, String>("accNo"));
+//        eventDateCol.setCellValueFactory(new PropertyValueFactory<events, String>("date"));
+
         eventTable.setItems(list);
     }
 

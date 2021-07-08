@@ -215,7 +215,7 @@
                               <TableColumn fx:id="eventSeatsCol" prefWidth="108.0" text="Seats" />
                               <TableColumn fx:id="eventPriceCol" prefWidth="83.0" text="Price" />
                               <TableColumn fx:id="eventAccountCol" prefWidth="96.0" text="AccountNo" />
-                              <TableColumn fx:id="eventSeatsCol1" prefWidth="120.0" text="date" />
+                              <TableColumn fx:id="eventDateCol" prefWidth="120.0" text="date" />
                            </columns>
                         </TableView>
                         <Pane layoutX="14.0" layoutY="90.0" prefHeight="493.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
