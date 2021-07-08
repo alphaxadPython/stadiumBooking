@@ -83,23 +83,21 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private Button deleteEvent;
     @FXML
-    private TableView<?> stadiumTable;
+    private TableView<stadiumVenue> stadiumTable;
+
     @FXML
-    private TableColumn<?, ?> stadNoCol;
+    private TableColumn<stadiumVenue, String> stadiumNameCol;
     @FXML
-    private TableColumn<?, ?> stadiumNameCol;
+    private TableColumn<stadiumVenue, String> stadiumLocationCol;
     @FXML
-    private TableColumn<?, ?> stadiumLocationCol;
+    private TableColumn<stadiumVenue, String> stadiumCapacityCol;
     @FXML
-    private TableColumn<?, ?> stadiumCapacityCol;
+    private TableColumn<stadiumVenue, String> stadiumSeatsCol;
     @FXML
-    private TableColumn<?, ?> stadiumSeatsCol;
+    private TableColumn<stadiumVenue, String> stadiumPriceCol;
     @FXML
-    private TableColumn<?, ?> stadiumPriceCol;
-    @FXML
-    private TableColumn<?, ?> stadiumAcountCol;
-    @FXML
-    private TableColumn<?, ?> stadiumStatusCol;
+    private TableColumn<stadiumVenue, String> stadiumAcountCol;
+
     @FXML
     private TextField stadiumFullname;
     @FXML
@@ -153,6 +151,8 @@ public class AdminDashboardController implements Initializable {
     private TableColumn<?, ?> eventBookSaetNOCol;
     @FXML
     private TableColumn<events, String> eventDateCol;
+    @FXML
+    private TableColumn<stadiumVenue, String> stadiumCartegoryCol;
 
     /**
      * Initializes the controller class.
@@ -161,6 +161,7 @@ public class AdminDashboardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             eventsTable();
+            stadiumTable();
         } catch (SQLException ex) {
             Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -274,7 +275,8 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    public ObservableList<events> getUsersList() throws SQLException {
+//    fetch data for Events
+    public ObservableList<events> getEventList() throws SQLException {
         ObservableList<events> userlist = FXCollections.observableArrayList();
         Connection conn = DBconnection.getConnection();
         String query = "Select * from events";
@@ -294,9 +296,11 @@ public class AdminDashboardController implements Initializable {
 
         return userlist;
     }
+//    assign events in table
 
+//    assign data to event table
     public void eventsTable() throws SQLException {
-        ObservableList<events> list = (ObservableList<events>) getUsersList();
+        ObservableList<events> list = (ObservableList<events>) getEventList();
         eventNamecol.setCellValueFactory(new PropertyValueFactory<events, String>("name"));
         eventLocationCol.setCellValueFactory(new PropertyValueFactory<events, String>("location"));
         eventSeatsCol.setCellValueFactory(new PropertyValueFactory<events, String>("seat"));
@@ -307,6 +311,42 @@ public class AdminDashboardController implements Initializable {
         eventTable.setItems(list);
     }
 
+//    fetch data for Venues and stadiums
+    public ObservableList<stadiumVenue> getStadiumList() throws SQLException {
+        ObservableList<stadiumVenue> stadiumList = FXCollections.observableArrayList();
+        Connection conn = DBconnection.getConnection();
+        String query = "Select * from stadvenu";
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            stadiumVenue stad;
+            while (rs.next()) {
+                stad = new stadiumVenue(rs.getString("name"), rs.getString("location"), rs.getString("seats"), rs.getString("price"), rs.getString("capacity"), rs.getString("cartegory"), rs.getString("accNo"));
+                stadiumList.add(stad);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return stadiumList;
+    }
+
+//     assign the data to stadium and venue table
+    public void stadiumTable() throws SQLException {
+        ObservableList<stadiumVenue> stad = (ObservableList<stadiumVenue>) getStadiumList();
+        stadiumNameCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("name"));
+        stadiumLocationCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("location"));
+        stadiumSeatsCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("seat"));
+        stadiumPriceCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("price"));
+        stadiumCapacityCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("capacity"));
+        stadiumCartegoryCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("cartegory"));
+        stadiumAcountCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("accNo"));
+
+        stadiumTable.setItems(stad);
+    }
+
     public String Name;
     public String location;
     public String seats;
@@ -314,6 +354,7 @@ public class AdminDashboardController implements Initializable {
     public String account;
     public java.sql.Date dates;
 
+//    converting date formats
     public static final LocalDate LOCAL_DATE(String dateString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(dateString, formatter);
@@ -329,6 +370,7 @@ public class AdminDashboardController implements Initializable {
             eventSeats.setText(eventTable.getSelectionModel().getSelectedItem().seat);
             eventCost.setText(eventTable.getSelectionModel().getSelectedItem().price);
             eventAccount.setText(eventTable.getSelectionModel().getSelectedItem().accNo);
+//            stadiumCartegory.setValue(eventTable.getSelectionModel().getSelectedItem().Cartegory);
 
 //            set to variables
             Name = eventTable.getSelectionModel().getSelectedItem().name;
@@ -418,6 +460,16 @@ public class AdminDashboardController implements Initializable {
             System.out.println("Cannot connect the database!" + e.getMessage());
         }
         System.out.println("Event has bean Updated");
+    }
+
+//    on cell double click stadium table
+    @FXML
+    private void clickStadiums(MouseEvent event) {
+        if (event.getClickCount() == 2) {
+                stadiumFullname.setText(eventTable.getSelectionModel().getSelectedItem().name);
+
+            }
+
     }
 
 }

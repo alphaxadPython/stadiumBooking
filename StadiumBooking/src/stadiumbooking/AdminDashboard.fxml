@@ -297,16 +297,15 @@
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="stadiumTable" layoutX="414.0" layoutY="71.0" prefHeight="507.0" prefWidth="593.0" AnchorPane.leftAnchor="414.0" AnchorPane.topAnchor="71.0">
+                        <TableView fx:id="stadiumTable" layoutX="414.0" layoutY="71.0" onMouseClicked="#clickStadiums" prefHeight="507.0" prefWidth="593.0" AnchorPane.leftAnchor="414.0" AnchorPane.topAnchor="71.0">
                           <columns>
-                            <TableColumn fx:id="stadNoCol" prefWidth="75.0" text="No" />
-                            <TableColumn fx:id="stadiumNameCol" prefWidth="75.0" text="Name" />
-                              <TableColumn fx:id="stadiumLocationCol" prefWidth="75.0" text="Location" />
-                              <TableColumn fx:id="stadiumCapacityCol" prefWidth="75.0" text="Capacity" />
-                              <TableColumn fx:id="stadiumSeatsCol" prefWidth="75.0" text="Seats" />
-                              <TableColumn fx:id="stadiumPriceCol" prefWidth="75.0" text="Price" />
-                              <TableColumn fx:id="stadiumAcountCol" prefWidth="75.0" text="AccountNo" />
-                              <TableColumn fx:id="stadiumStatusCol" prefWidth="75.0" text="Status" />
+                            <TableColumn fx:id="stadiumNameCol" prefWidth="94.0" text="Name" />
+                              <TableColumn fx:id="stadiumLocationCol" prefWidth="70.0" text="Location" />
+                              <TableColumn fx:id="stadiumCapacityCol" prefWidth="82.0" text="Capacity" />
+                              <TableColumn fx:id="stadiumSeatsCol" prefWidth="81.0" text="Seats" />
+                              <TableColumn fx:id="stadiumPriceCol" prefWidth="78.0" text="Price" />
+                              <TableColumn fx:id="stadiumAcountCol" prefWidth="101.0" text="AccountNo" />
+                              <TableColumn fx:id="stadiumCartegoryCol" prefWidth="86.0" text="Cartegory" />
                           </columns>
                         </TableView>
                         <Pane layoutX="21.0" layoutY="70.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="70.0">
