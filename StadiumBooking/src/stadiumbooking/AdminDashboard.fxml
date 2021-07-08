@@ -208,7 +208,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="eventTable" layoutX="413.0" layoutY="90.0" prefHeight="492.0" prefWidth="593.0">
+                        <TableView fx:id="eventTable" layoutX="413.0" layoutY="90.0" onMouseClicked="#Eventselect" prefHeight="492.0" prefWidth="593.0" style="-fx-cell-size: 200px;">
                            <columns>
                               <TableColumn fx:id="eventNamecol" prefWidth="75.0" text="Name" />
                               <TableColumn fx:id="eventLocationCol" prefWidth="110.0" text="Location" />
@@ -273,12 +273,12 @@
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Button fx:id="deleteEvent" layoutX="515.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="594.0">
+                        <Button fx:id="deleteEvent" layoutX="515.0" layoutY="594.0" mnemonicParsing="false" onAction="#deleteEventHere" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="594.0">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="updateEvent" layoutX="783.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
+                        <Button layoutX="783.0" layoutY="594.0" mnemonicParsing="false" onAction="#updateEventHere" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>

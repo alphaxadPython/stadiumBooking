@@ -16,6 +16,7 @@ public class events extends Component {
     public void setDate(Date date) {
         this.date = date;
     }
+
     public String getName() {
         return name;
     }
@@ -56,8 +57,6 @@ public class events extends Component {
         this.accNo = accNo;
     }
 
-    
-
     public events(String name, String location, java.sql.Date date, String seat, String price, String accNo) {
         this.date = date;
         this.name = name;
@@ -91,5 +90,5 @@ public class events extends Component {
         }
         System.out.println("Event has been added");
     }
-    
+
 }

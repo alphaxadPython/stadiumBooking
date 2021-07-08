@@ -2,10 +2,12 @@ package stadiumbooking;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +27,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javax.swing.table.DefaultTableModel;
 
 public class AdminDashboardController implements Initializable {
 
@@ -81,8 +82,6 @@ public class AdminDashboardController implements Initializable {
     private TextField eventCost;
     @FXML
     private Button deleteEvent;
-    @FXML
-    private Button updateEvent;
     @FXML
     private TableView<?> stadiumTable;
     @FXML
@@ -153,7 +152,7 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private TableColumn<?, ?> eventBookSaetNOCol;
     @FXML
-    private TableColumn<?, ?> eventDateCol;
+    private TableColumn<events, String> eventDateCol;
 
     /**
      * Initializes the controller class.
@@ -303,9 +302,122 @@ public class AdminDashboardController implements Initializable {
         eventSeatsCol.setCellValueFactory(new PropertyValueFactory<events, String>("seat"));
         eventPriceCol.setCellValueFactory(new PropertyValueFactory<events, String>("price"));
         eventAccountCol.setCellValueFactory(new PropertyValueFactory<events, String>("accNo"));
-//        eventDateCol.setCellValueFactory(new PropertyValueFactory<events, String>("date"));
+        eventDateCol.setCellValueFactory(new PropertyValueFactory<events, String>("date"));
 
         eventTable.setItems(list);
+    }
+
+    public String Name;
+    public String location;
+    public String seats;
+    public String cost;
+    public String account;
+    public java.sql.Date dates;
+
+    public static final LocalDate LOCAL_DATE(String dateString) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(dateString, formatter);
+        return localDate;
+    }
+
+    @FXML
+    private void Eventselect(MouseEvent event) {
+        if (event.getClickCount() == 2) //Checking double click
+        {
+            eventFullname.setText(eventTable.getSelectionModel().getSelectedItem().name);
+            eventLocation.setText(eventTable.getSelectionModel().getSelectedItem().location);
+            eventSeats.setText(eventTable.getSelectionModel().getSelectedItem().seat);
+            eventCost.setText(eventTable.getSelectionModel().getSelectedItem().price);
+            eventAccount.setText(eventTable.getSelectionModel().getSelectedItem().accNo);
+
+//            set to variables
+            Name = eventTable.getSelectionModel().getSelectedItem().name;
+            location = eventTable.getSelectionModel().getSelectedItem().location;
+            seats = eventTable.getSelectionModel().getSelectedItem().seat;
+            cost = eventTable.getSelectionModel().getSelectedItem().price;
+            account = eventTable.getSelectionModel().getSelectedItem().accNo;
+            dates = eventTable.getSelectionModel().getSelectedItem().date;
+
+            eventDate.setValue(LOCAL_DATE(dates.toString()));
+        }
+    }
+
+    @FXML
+    private void deleteEventHere(ActionEvent event) {
+        try (Connection conn = DBconnection.getConnection()) {
+
+            // The mysql insert statement for table users_table
+            String query = "DELETE FROM events WHERE name=?";
+            // Create the mysql insert prepared statement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, Name);
+
+            // Execute the preparedstatement
+            preparedStmt.execute();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Deleted Successfully!!");
+            alert.setTitle("Deleted");
+            alert.setHeaderText(null);
+            alert.show();
+
+            eventFullname.setText("");
+            eventLocation.setText("");
+            eventDate.setValue(null);
+            eventSeats.setText("");
+            eventCost.setText("");
+            eventAccount.setText("");
+            eventsTable();
+
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Cannot connect the database!" + e.getMessage());
+        }
+        System.out.println("Deleting the Event");
+    }
+
+    @FXML
+    private void updateEventHere(ActionEvent event) {
+        try (Connection conn = DBconnection.getConnection()) {
+
+            // The mysql insert statement for table users_table
+            String query = "UPDATE events SET name=?, location=?, date=?, seats=?, price=?, accNo=? where name=?";
+
+            // Create the mysql insert prepared statement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, eventFullname.getText());
+            preparedStmt.setString(2, eventLocation.getText());
+            java.sql.Date date = java.sql.Date.valueOf(eventDate.getValue());
+
+            preparedStmt.setDate(3, date);
+            preparedStmt.setString(4, eventSeats.getText());
+            preparedStmt.setString(5, eventCost.getText());
+            preparedStmt.setString(6, eventAccount.getText());
+            preparedStmt.setString(7, Name);
+
+            // Execute the preparedstatement
+            preparedStmt.execute();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Updated Successfully!!!!");
+            alert.setTitle("Updates");
+            alert.setHeaderText(null);
+            alert.show();
+
+            eventFullname.setText("");
+            eventLocation.setText("");
+            eventDate.setValue(null);
+            eventSeats.setText("");
+            eventCost.setText("");
+            eventAccount.setText("");
+
+            eventsTable();
+
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Cannot connect the database!" + e.getMessage());
+        }
+        System.out.println("Event has bean Updated");
     }
 
 }
