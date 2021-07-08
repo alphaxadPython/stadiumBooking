@@ -1,11 +1,13 @@
-
 package stadiumbooking;
 
+import java.sql.Date;
+
 public class Booking {
+
     String username;
     String bookingType;
     String phone;
-    String date;
+    java.sql.Date date;
     String receipt;
 
     public String getUsername() {
@@ -32,13 +34,15 @@ public class Booking {
         this.phone = phone;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
+
+   
 
     public String getReceipt() {
         return receipt;
@@ -47,7 +51,7 @@ public class Booking {
     public void setReceipt(String receipt) {
         this.receipt = receipt;
     }
-    
-    
+
+
     
 }

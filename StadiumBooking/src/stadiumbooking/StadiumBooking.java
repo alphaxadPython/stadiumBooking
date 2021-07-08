@@ -1,7 +1,6 @@
 
 package stadiumbooking;
 
-import java.awt.geom.Rectangle2D;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;

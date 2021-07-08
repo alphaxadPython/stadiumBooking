@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -19,8 +20,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1154.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="stadiumbooking.AdminDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.AdminDashboardController">
    <children>
       <MenuBar layoutX="89.0" layoutY="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -98,7 +98,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="stadiumTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -112,7 +112,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="venuTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -126,7 +126,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="EventsTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -140,7 +140,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="stadiumBookingTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -154,7 +154,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="VenuBookingTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -168,7 +168,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="eventBookingTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -208,16 +208,14 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="413.0" layoutY="90.0" prefHeight="492.0" prefWidth="593.0">
+                        <TableView fx:id="eventTable" layoutX="413.0" layoutY="90.0" prefHeight="492.0" prefWidth="593.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="No" />
-                              <TableColumn prefWidth="75.0" text="Name" />
-                              <TableColumn prefWidth="75.0" text="Location" />
-                              <TableColumn prefWidth="75.0" text="Capacity" />
-                              <TableColumn prefWidth="75.0" text="Seats" />
-                              <TableColumn prefWidth="75.0" text="Price" />
-                              <TableColumn prefWidth="75.0" text="AccountNo" />
-                              <TableColumn prefWidth="75.0" text="Status" />
+                              <TableColumn fx:id="eventNamecol" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="eventLocationCol" prefWidth="110.0" text="Location" />
+                              <TableColumn fx:id="eventSeatsCol" prefWidth="108.0" text="Seats" />
+                              <TableColumn fx:id="eventPriceCol" prefWidth="83.0" text="Price" />
+                              <TableColumn fx:id="eventAccountCol" prefWidth="96.0" text="AccountNo" />
+                              <TableColumn fx:id="eventSeatsCol1" prefWidth="120.0" text="date" />
                            </columns>
                         </TableView>
                         <Pane layoutX="14.0" layoutY="90.0" prefHeight="493.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
@@ -237,20 +235,20 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="307.0" promptText="fullname" />
+                              <TextField fx:id="eventFullname" layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="307.0" promptText="fullname" />
                               <Label layoutX="31.0" layoutY="150.0" text="Location" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="178.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="eventLocation" layoutX="35.0" layoutY="178.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
                               <Label layoutX="36.0" layoutY="306.0" text="Account Number" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="37.0" layoutY="334.0" prefHeight="37.0" prefWidth="300.0" promptText="Receipt no" />
-                              <Button layoutX="33.0" layoutY="389.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="REGISTER" textFill="WHITE">
+                              <TextField fx:id="eventAccount" layoutX="37.0" layoutY="334.0" prefHeight="37.0" prefWidth="300.0" promptText="Receipt no" />
+                              <Button fx:id="eventRegister" layoutX="33.0" layoutY="389.0" mnemonicParsing="false" onAction="#EventRegistration" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="REGISTER" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -260,14 +258,14 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="206.0" layoutY="176.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
-                              <TextField layoutX="34.0" layoutY="251.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="eventSeats" layoutX="34.0" layoutY="251.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
                               <Label layoutX="201.0" layoutY="221.0" text="Cost" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="205.0" layoutY="249.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="eventCost" layoutX="205.0" layoutY="249.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <DatePicker fx:id="eventDate" layoutX="202.0" layoutY="177.0" prefHeight="40.0" prefWidth="141.0" promptText="date" />
                            </children>
                         </Pane>
                         <Label layoutX="20.0" layoutY="33.0" text="Manage events:" textFill="#079992">
@@ -275,12 +273,12 @@
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Button layoutX="515.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="594.0">
+                        <Button fx:id="deleteEvent" layoutX="515.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="594.0">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button layoutX="783.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
+                        <Button fx:id="updateEvent" layoutX="783.0" layoutY="594.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
@@ -299,16 +297,16 @@
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="414.0" layoutY="71.0" prefHeight="507.0" prefWidth="593.0" AnchorPane.leftAnchor="414.0" AnchorPane.topAnchor="71.0">
+                        <TableView fx:id="stadiumTable" layoutX="414.0" layoutY="71.0" prefHeight="507.0" prefWidth="593.0" AnchorPane.leftAnchor="414.0" AnchorPane.topAnchor="71.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="No" />
-                            <TableColumn prefWidth="75.0" text="Name" />
-                              <TableColumn prefWidth="75.0" text="Location" />
-                              <TableColumn prefWidth="75.0" text="Capacity" />
-                              <TableColumn prefWidth="75.0" text="Seats" />
-                              <TableColumn prefWidth="75.0" text="Price" />
-                              <TableColumn prefWidth="75.0" text="AccountNo" />
-                              <TableColumn prefWidth="75.0" text="Status" />
+                            <TableColumn fx:id="stadNoCol" prefWidth="75.0" text="No" />
+                            <TableColumn fx:id="stadiumNameCol" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="stadiumLocationCol" prefWidth="75.0" text="Location" />
+                              <TableColumn fx:id="stadiumCapacityCol" prefWidth="75.0" text="Capacity" />
+                              <TableColumn fx:id="stadiumSeatsCol" prefWidth="75.0" text="Seats" />
+                              <TableColumn fx:id="stadiumPriceCol" prefWidth="75.0" text="Price" />
+                              <TableColumn fx:id="stadiumAcountCol" prefWidth="75.0" text="AccountNo" />
+                              <TableColumn fx:id="stadiumStatusCol" prefWidth="75.0" text="Status" />
                           </columns>
                         </TableView>
                         <Pane layoutX="21.0" layoutY="70.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="70.0">
@@ -328,20 +326,20 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="307.0" promptText="fullname" />
+                              <TextField fx:id="stadiumFullname" layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="307.0" promptText="fullname" />
                               <Label layoutX="31.0" layoutY="150.0" text="Location" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="178.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="stadiumLocation" layoutX="35.0" layoutY="178.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
                               <Label layoutX="36.0" layoutY="375.0" text="Account Number" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="37.0" layoutY="403.0" prefHeight="37.0" prefWidth="300.0" promptText="Receipt no" />
-                              <Button layoutX="33.0" layoutY="458.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="REGISTER" textFill="WHITE">
+                              <TextField fx:id="stadiumAccount" layoutX="37.0" layoutY="403.0" prefHeight="37.0" prefWidth="300.0" promptText="Receipt no" />
+                              <Button fx:id="registerStadiumVenu" layoutX="33.0" layoutY="458.0" mnemonicParsing="false" onMouseClicked="#stdiumVenuRegistration" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="REGISTER" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -351,28 +349,28 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="206.0" layoutY="176.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
-                              <TextField layoutX="34.0" layoutY="251.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="stadiumCapacity" layoutX="206.0" layoutY="176.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="stadiumSeats" layoutX="34.0" layoutY="251.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
                               <Label layoutX="201.0" layoutY="221.0" text="Price" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="205.0" layoutY="249.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
+                              <TextField fx:id="stadiumPrice" layoutX="205.0" layoutY="249.0" prefHeight="37.0" prefWidth="134.0" promptText="phone" />
                               <Label layoutX="34.0" layoutY="301.0" text="Cartegory" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox layoutX="36.0" layoutY="327.0" prefHeight="41.0" prefWidth="302.0" />
+                              <ComboBox fx:id="stadiumCartegory" layoutX="36.0" layoutY="327.0" prefHeight="41.0" prefWidth="302.0" />
                            </children>
                         </Pane>
-                        <Button layoutX="527.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE">
+                        <Button fx:id="deleteStadium" layoutX="527.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button layoutX="777.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
+                        <Button fx:id="updateStadium" layoutX="777.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
@@ -386,15 +384,15 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="62.0" layoutY="76.0" prefHeight="507.0" prefWidth="909.0">
+                        <TableView fx:id="stadiumBookings" layoutX="62.0" layoutY="76.0" prefHeight="507.0" prefWidth="909.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="No" />
-                              <TableColumn prefWidth="138.0" text="Username" />
-                              <TableColumn prefWidth="172.0" text="Venu/Stadium" />
-                              <TableColumn prefWidth="140.0" text="Phone" />
-                              <TableColumn prefWidth="135.0" text="Date" />
-                              <TableColumn prefWidth="140.0" text="Receipt" />
-                              <TableColumn prefWidth="108.0" text="Status" />
+                              <TableColumn fx:id="stadBookNoCol" prefWidth="75.0" text="No" />
+                              <TableColumn fx:id="stadiumBookUsernameCol" prefWidth="138.0" text="Username" />
+                              <TableColumn fx:id="sadiumVenuBookCol" prefWidth="172.0" text="Venu/Stadium" />
+                              <TableColumn fx:id="stadiumBookPhoneCol" prefWidth="140.0" text="Phone" />
+                              <TableColumn fx:id="stadiumBookDaeCol" prefWidth="135.0" text="Date" />
+                              <TableColumn fx:id="stadiumBookReceiptCol" prefWidth="140.0" text="Receipt" />
+                              <TableColumn fx:id="stadiumBookStatusCol" prefWidth="108.0" text="Status" />
                            </columns>
                         </TableView>
                         <Label layoutX="23.0" layoutY="23.0" text="Stadiums &amp; Venue Bookings:" textFill="#079992">
@@ -413,13 +411,13 @@
                      <children>
                         <TableView layoutX="40.0" layoutY="80.0" prefHeight="507.0" prefWidth="909.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="No" />
-                              <TableColumn prefWidth="138.0" text="Username" />
-                              <TableColumn prefWidth="172.0" text="Event" />
-                              <TableColumn prefWidth="140.0" text="Phone" />
-                              <TableColumn prefWidth="135.0" text="Date" />
-                              <TableColumn prefWidth="140.0" text="Receipt" />
-                              <TableColumn prefWidth="108.0" text="seat No" />
+                              <TableColumn fx:id="eventBookNoCol" prefWidth="75.0" text="No" />
+                              <TableColumn fx:id="eventBookUsernameCol" prefWidth="138.0" text="Username" />
+                              <TableColumn fx:id="eventBookNameCol" prefWidth="172.0" text="Event" />
+                              <TableColumn fx:id="eventBookPhoneCol" prefWidth="140.0" text="Phone" />
+                              <TableColumn fx:id="eventBookDateCol" prefWidth="135.0" text="Date" />
+                              <TableColumn fx:id="eventBookReceiptCol" prefWidth="140.0" text="Receipt" />
+                              <TableColumn fx:id="eventBookSaetNOCol" prefWidth="108.0" text="seat No" />
                            </columns>
                         </TableView>
                         <Label layoutX="22.0" layoutY="29.0" text="Event bookings:" textFill="#079992">

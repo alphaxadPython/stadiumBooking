@@ -501,13 +501,13 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
+                              <TextField fx:id="stadiumBookerFullname" layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
                               <Label layoutX="31.0" layoutY="154.0" text="Phone" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
+                              <TextField fx:id="stadiumBookerPhone" layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
                               <Label layoutX="31.0" layoutY="233.0" text="Date" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
@@ -518,9 +518,9 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
-                              <DatePicker layoutX="34.0" layoutY="259.0" prefHeight="37.0" prefWidth="294.0" promptText="Date" />
-                              <Button layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
+                              <TextField fx:id="stadiumBookerReceipt" layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
+                              <DatePicker fx:id="stadiumBookerDate" layoutX="34.0" layoutY="259.0" prefHeight="37.0" prefWidth="294.0" promptText="Date" />
+                              <Button layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onAction="#BookStadiumHere" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -620,13 +620,13 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
+                              <TextField fx:id="venuBookerFullname" layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
                               <Label layoutX="31.0" layoutY="154.0" text="Phone" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
+                              <TextField fx:id="venuBookerPhone" layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
                               <Label layoutX="31.0" layoutY="233.0" text="Date" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
@@ -637,9 +637,9 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
-                              <DatePicker layoutX="34.0" layoutY="259.0" prefHeight="37.0" prefWidth="294.0" promptText="Date" />
-                              <Button layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
+                              <TextField fx:id="venuBookerReceipt" layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
+                              <DatePicker fx:id="venuBookerDate" layoutX="34.0" layoutY="259.0" prefHeight="37.0" prefWidth="294.0" promptText="Date" />
+                              <Button fx:id="bookvn" layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onAction="#BookVenuNow" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -750,13 +750,13 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
+                              <TextField fx:id="eventBookerFullname" layoutX="35.0" layoutY="102.0" prefHeight="37.0" prefWidth="291.0" promptText="fullname" />
                               <Label layoutX="31.0" layoutY="154.0" text="Phone" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
+                              <TextField fx:id="eventBookerPhone" layoutX="35.0" layoutY="182.0" prefHeight="37.0" prefWidth="291.0" promptText="phone" />
                               <Label layoutX="31.0" layoutY="233.0" text="Seat No:" textFill="TEAL">
                                  <font>
                                     <Font name="Arial" size="16.0" />
@@ -767,8 +767,8 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
-                              <Button layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
+                              <TextField fx:id="eventBookerReceipt" layoutX="37.0" layoutY="342.0" prefHeight="37.0" prefWidth="291.0" promptText="Receipt no" />
+                              <Button fx:id="BookEventBtn" layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onAction="#BookEventNow" onMouseClicked="#myBookings" prefHeight="36.0" prefWidth="307.0" style="-fx-background-color: #78e08f;" text="BOOK NOW" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -778,7 +778,7 @@
                                     <Image url="@img/pay2.png" />
                                  </image>
                               </ImageView>
-                              <TextField layoutX="35.0" layoutY="265.0" prefHeight="37.0" prefWidth="291.0" promptText="seat No" />
+                              <TextField fx:id="eventBookerSeat" layoutX="35.0" layoutY="265.0" prefHeight="37.0" prefWidth="291.0" promptText="seat No" />
                            </children>
                         </Pane>
                      </children>
@@ -845,7 +845,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Pane layoutX="128.0" layoutY="24.0" prefHeight="33.0" prefWidth="927.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="0.0" />
+      <Pane layoutX="130.0" layoutY="76.0" prefHeight="33.0" prefWidth="927.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="0.0" />
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />
