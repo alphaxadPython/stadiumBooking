@@ -27,13 +27,13 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="368.0" layoutY="113.0" prefHeight="37.0" prefWidth="291.0" promptText="Username" />
+      <TextField fx:id="username" layoutX="368.0" layoutY="113.0" prefHeight="37.0" prefWidth="291.0" promptText="Username" />
       <Label layoutX="368.0" layoutY="180.0" text="Password:" textFill="TEAL">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Label>
-      <PasswordField layoutX="369.0" layoutY="220.0" prefHeight="37.0" prefWidth="291.0" promptText="password" />
+      <PasswordField fx:id="password" layoutX="369.0" layoutY="220.0" prefHeight="37.0" prefWidth="291.0" promptText="password" />
       <Button fx:id="login" layoutX="363.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#loginUser" prefHeight="25.0" prefWidth="291.0" style="-fx-background-color: #78e08f;" text="Login" textFill="WHITE">
          <font>
             <Font size="15.0" />

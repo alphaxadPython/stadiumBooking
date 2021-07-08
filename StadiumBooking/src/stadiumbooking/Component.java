@@ -48,6 +48,8 @@ public class Component {
     public void setAccNo(String accNo) {
         this.accNo = accNo;
     }
+
+   
     
     
     

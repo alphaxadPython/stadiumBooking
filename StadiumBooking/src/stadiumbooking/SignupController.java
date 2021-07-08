@@ -47,8 +47,22 @@ public class SignupController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Please Fill All fields!!");
                 alert.setTitle("Empty Fields");
+                alert.setHeaderText(null);
                 alert.showAndWait();
             } else if (pwd1.equals(pwd2)) {
+                String user = username.getText();
+                String pass = password.getText();
+                String phn = phone.getText();
+
+                Register newUser = new Register(user, pass, phn);
+                newUser.signUser();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Successfully Registered!!");
+                alert.setTitle("Registered");
+                alert.setHeaderText(null);
+                alert.show();
+
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
                 Stage stage = (Stage) signup.getScene().getWindow();
                 Scene scene = new Scene(loader.load());
@@ -57,7 +71,8 @@ public class SignupController implements Initializable {
 
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("The two passwords do not match");
-                alert.setTitle("Empty Fields");
+                alert.setTitle("Password Error");
+                alert.setHeaderText(null);
                 alert.showAndWait();
             }
 
@@ -79,12 +94,11 @@ public class SignupController implements Initializable {
     }
 
     private void RegisterUser() {
-        String query = "Insert into signup values("+ username.getText() + ",'" + password.getText() + "','" + phone.getText() + "')";
+        String query = "Insert into signup values(" + username.getText() + ",'" + password.getText() + "','" + phone.getText() + "')";
         executeQuery(query);
     }
 
 //    function to execute the insert queryprivate
-
     void executeQuery(String query) {
         Connection conn = ConnectDB();
         Statement st;
@@ -96,14 +110,15 @@ public class SignupController implements Initializable {
         }
     }
 
-    
-      Connection conn = null;
+    Connection conn = null;
+
     public Connection ConnectDB() {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/booking", "root", "");
             return conn;
-        }catch (Exception e) {return null;}
- 
+        } catch (Exception e) {
+            return null;
+        }
 
     }
 //    @FXML

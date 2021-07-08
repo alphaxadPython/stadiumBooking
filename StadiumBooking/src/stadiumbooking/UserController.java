@@ -2,12 +2,14 @@
 package stadiumbooking;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
+import javax.swing.table.DefaultTableModel;
 
 
 public class UserController implements Initializable {
@@ -26,7 +28,11 @@ public class UserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }  
+    
+    public void showEvents(){
+       
+    }
 
     @FXML
     private void goHome(MouseEvent event) {

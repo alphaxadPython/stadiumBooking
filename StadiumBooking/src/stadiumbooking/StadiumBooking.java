@@ -18,7 +18,7 @@ public class StadiumBooking extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
 //         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
