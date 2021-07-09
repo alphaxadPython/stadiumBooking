@@ -75,6 +75,16 @@ public class stadiumVenue extends Component {
         this.accNo = accNo;
 
     }
+    
+    public stadiumVenue(String name, String location, String seat, String price, String Capacity,String accNo) {
+        this.name = name;
+        this.location = location;
+        this.seat = seat;
+        this.price = price;
+        this.Capacity = Capacity;
+        this.accNo = accNo;
+
+    }
 
     public void stadiumVenueRegister() {
         try (Connection conn = DBconnection.getConnection()) {

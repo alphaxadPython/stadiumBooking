@@ -10,14 +10,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-
 public class StadiumBooking extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("User.fxml"));
 //         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
@@ -46,7 +45,6 @@ public class StadiumBooking extends Application {
        
     }
     
-   
    
     public static void main(String[] args) {
         launch(args);

@@ -65,6 +65,8 @@ public class events extends Component {
         this.price = price;
         this.accNo = accNo;
     }
+    
+     
 
     public void eventRegister() {
         try (Connection conn = DBconnection.getConnection()) {

@@ -167,14 +167,14 @@
                               <Blend />
                            </effect>
                         </Label>
-                        <TableView layoutX="21.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
+                        <TableView fx:id="stadiumTable" layoutX="21.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
                           <columns>
-                              <TableColumn prefWidth="138.0" text="Name" />
-                              <TableColumn prefWidth="90.0" text="Capacity" />
-                              <TableColumn prefWidth="118.0" text="location" />
-                              <TableColumn prefWidth="102.0" text="seats" />
-                              <TableColumn prefWidth="88.0" text="Price" />
-                              <TableColumn prefWidth="101.0" text="Account" />
+                              <TableColumn fx:id="nameCol" prefWidth="138.0" text="Name" />
+                              <TableColumn fx:id="capacityCol" prefWidth="90.0" text="Capacity" />
+                              <TableColumn fx:id="locationCol" prefWidth="118.0" text="location" />
+                              <TableColumn fx:id="seatsCol" prefWidth="102.0" text="seats" />
+                              <TableColumn fx:id="priceCol" prefWidth="88.0" text="Price" />
+                              <TableColumn fx:id="accountCol" prefWidth="101.0" text="Account" />
                           </columns>
                         </TableView>
                         <Pane layoutX="696.0" layoutY="60.0" prefHeight="430.0" prefWidth="297.0" style="-fx-background-color: #38ada9;">
@@ -251,16 +251,14 @@
                               <Blend />
                            </effect>
                         </Label>
-                        <TableView layoutX="37.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0">
+                        <TableView fx:id="evenTable" layoutX="37.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0">
                            <columns>
-                              <TableColumn prefWidth="39.0" text="no" />
-                              <TableColumn prefWidth="111.0" text="Photo" />
-                              <TableColumn prefWidth="104.0" text="Event" />
-                              <TableColumn prefWidth="84.0" text="Date" />
-                              <TableColumn prefWidth="78.0" text="location" />
-                              <TableColumn prefWidth="64.0" text="seats" />
-                              <TableColumn prefWidth="85.0" text="Price" />
-                              <TableColumn prefWidth="72.0" text="status" />
+                              <TableColumn fx:id="eventCol" prefWidth="110.0" text="Event" />
+                              <TableColumn fx:id="eventDate" prefWidth="109.0" text="Date" />
+                              <TableColumn fx:id="eventLocation" prefWidth="126.0" text="location" />
+                              <TableColumn fx:id="eventSeat" minWidth="0.0" prefWidth="94.0" text="seats" />
+                              <TableColumn fx:id="eventPrice" prefWidth="100.0" text="Price" />
+                              <TableColumn fx:id="eventAccount" prefWidth="100.0" text="account" />
                            </columns>
                         </TableView>
                         <Pane layoutX="696.0" layoutY="62.0" prefHeight="430.0" prefWidth="291.0" style="-fx-background-color: #38ada9;">
@@ -327,7 +325,7 @@
             </Tab>
             <Tab text="userVenues">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1024.0">
                      <children>
                         <Label layoutX="21.0" layoutY="22.0" text="Available Venues:" textFill="#079992">
                            <font>
@@ -337,18 +335,6 @@
                               <Blend />
                            </effect>
                         </Label>
-                        <TableView layoutX="38.0" layoutY="66.0" prefHeight="433.0" prefWidth="640.0">
-                           <columns>
-                              <TableColumn prefWidth="39.0" text="no" />
-                              <TableColumn prefWidth="111.0" text="Photo" />
-                              <TableColumn prefWidth="104.0" text="Event" />
-                              <TableColumn prefWidth="84.0" text="Date" />
-                              <TableColumn prefWidth="78.0" text="location" />
-                              <TableColumn prefWidth="64.0" text="seats" />
-                              <TableColumn prefWidth="85.0" text="Price" />
-                              <TableColumn prefWidth="72.0" text="status" />
-                           </columns>
-                        </TableView>
                         <Pane layoutX="705.0" layoutY="68.0" prefHeight="430.0" prefWidth="296.0" style="-fx-background-color: #38ada9;">
                            <children>
                               <ImageView fitHeight="178.0" fitWidth="298.0" layoutY="-1.0" pickOnBounds="true">
@@ -407,6 +393,16 @@
                                  </font></Button>
                            </children>
                         </Pane>
+                        <TableView fx:id="venuTable" layoutX="26.0" layoutY="69.0" prefHeight="433.0" prefWidth="640.0">
+                           <columns>
+                              <TableColumn fx:id="venuName" prefWidth="138.0" text="Name" />
+                              <TableColumn fx:id="venuCapacity" prefWidth="90.0" text="Capacity" />
+                              <TableColumn fx:id="venuLocation" prefWidth="118.0" text="location" />
+                              <TableColumn fx:id="venuSeats" prefWidth="102.0" text="seats" />
+                              <TableColumn fx:id="venuPrice" prefWidth="88.0" text="Price" />
+                              <TableColumn fx:id="venuAccount" prefWidth="101.0" text="Account" />
+                           </columns>
+                        </TableView>
                      </children></AnchorPane>
               </content>
             </Tab>
