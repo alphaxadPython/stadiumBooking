@@ -364,12 +364,12 @@
                               <ComboBox fx:id="stadiumCartegory" layoutX="36.0" layoutY="327.0" prefHeight="41.0" prefWidth="302.0" />
                            </children>
                         </Pane>
-                        <Button fx:id="deleteStadium" layoutX="527.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE">
+                        <Button layoutX="527.0" layoutY="590.0" mnemonicParsing="false" onAction="#deleteStadiumHere" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #e55039;" text="Delete" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="updateStadium" layoutX="777.0" layoutY="590.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
+                        <Button layoutX="777.0" layoutY="590.0" mnemonicParsing="false" onAction="#updateStadiumHere" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #079992;" text="Update" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>

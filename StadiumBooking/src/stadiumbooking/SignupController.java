@@ -121,10 +121,5 @@ public class SignupController implements Initializable {
         }
 
     }
-//    @FXML
-//    private void closeSignup(MouseEvent event) {
-////         close the stage
-//             Stage stage = (Stage) close.getScene().getWindow();
-//             stage.close();
-//    }
+
 }

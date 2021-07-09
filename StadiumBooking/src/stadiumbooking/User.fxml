@@ -169,14 +169,12 @@
                         </Label>
                         <TableView layoutX="21.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
                           <columns>
-                            <TableColumn prefWidth="39.0" text="no" />
-                            <TableColumn prefWidth="111.0" text="Photo" />
-                              <TableColumn prefWidth="104.0" text="Name" />
-                              <TableColumn prefWidth="84.0" text="Capacity" />
-                              <TableColumn prefWidth="78.0" text="location" />
-                              <TableColumn prefWidth="64.0" text="seats" />
-                              <TableColumn prefWidth="85.0" text="Price" />
-                              <TableColumn prefWidth="72.0" text="status" />
+                              <TableColumn prefWidth="138.0" text="Name" />
+                              <TableColumn prefWidth="90.0" text="Capacity" />
+                              <TableColumn prefWidth="118.0" text="location" />
+                              <TableColumn prefWidth="102.0" text="seats" />
+                              <TableColumn prefWidth="88.0" text="Price" />
+                              <TableColumn prefWidth="101.0" text="Account" />
                           </columns>
                         </TableView>
                         <Pane layoutX="696.0" layoutY="60.0" prefHeight="430.0" prefWidth="297.0" style="-fx-background-color: #38ada9;">
@@ -237,6 +235,7 @@
                                  </font></Button>
                            </children>
                         </Pane>
+                        <Pane layoutX="2.0" layoutY="544.0" prefHeight="33.0" prefWidth="927.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="128.0" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -845,7 +844,6 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Pane layoutX="130.0" layoutY="76.0" prefHeight="33.0" prefWidth="927.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="0.0" />
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

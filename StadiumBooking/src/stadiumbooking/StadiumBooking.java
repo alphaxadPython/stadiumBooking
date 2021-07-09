@@ -17,7 +17,7 @@ public class StadiumBooking extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 //         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
@@ -36,19 +36,14 @@ public class StadiumBooking extends Application {
             stage.setY(event.getScreenY() - yOffset);
             }
         });
-        
-        
-        
+    
         stage.setScene(scene);
-        
-        
-        
+      
         stage.show();
         javafx.geometry.Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
-        
-        
+       
     }
     
    

@@ -116,10 +116,6 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private ComboBox<String> stadiumCartegory;
     @FXML
-    private Button deleteStadium;
-    @FXML
-    private Button updateStadium;
-    @FXML
     private TableView<?> stadiumBookings;
     @FXML
     private TableColumn<?, ?> stadBookNoCol;
@@ -196,6 +192,7 @@ public class AdminDashboardController implements Initializable {
     private void StadBook(MouseEvent event) {
         adminTab.getSelectionModel().select(3);
     }
+//registering event here
 
     @FXML
     private void EventRegistration(ActionEvent event) {
@@ -236,6 +233,7 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
+//    registering stadium here
     @FXML
     private void stdiumVenuRegistration(MouseEvent event) {
         try {
@@ -270,6 +268,7 @@ public class AdminDashboardController implements Initializable {
                 stadiumAccount.setText("");
                 stadiumCartegory.setValue(null);
                 stadiumCapacity.setText("");
+                stadiumTable();
             }
         } catch (Exception e) {
         }
@@ -333,7 +332,7 @@ public class AdminDashboardController implements Initializable {
         return stadiumList;
     }
 
-//     assign the data to stadium and venue table
+//     assign the data to stadium and venue table and show it
     public void stadiumTable() throws SQLException {
         ObservableList<stadiumVenue> stad = (ObservableList<stadiumVenue>) getStadiumList();
         stadiumNameCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("name"));
@@ -347,12 +346,15 @@ public class AdminDashboardController implements Initializable {
         stadiumTable.setItems(stad);
     }
 
+//    public variables to catch selected data in table
     public String Name;
     public String location;
     public String seats;
     public String cost;
     public String account;
     public java.sql.Date dates;
+    public String capacity;
+    public String cartegory;
 
 //    converting date formats
     public static final LocalDate LOCAL_DATE(String dateString) {
@@ -361,6 +363,7 @@ public class AdminDashboardController implements Initializable {
         return localDate;
     }
 
+//    on table click select evet here
     @FXML
     private void Eventselect(MouseEvent event) {
         if (event.getClickCount() == 2) //Checking double click
@@ -372,7 +375,7 @@ public class AdminDashboardController implements Initializable {
             eventAccount.setText(eventTable.getSelectionModel().getSelectedItem().accNo);
 //            stadiumCartegory.setValue(eventTable.getSelectionModel().getSelectedItem().Cartegory);
 
-//            set to variables
+//            set to variables to innitiate update and delete
             Name = eventTable.getSelectionModel().getSelectedItem().name;
             location = eventTable.getSelectionModel().getSelectedItem().location;
             seats = eventTable.getSelectionModel().getSelectedItem().seat;
@@ -384,6 +387,7 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
+//    deleting event here
     @FXML
     private void deleteEventHere(ActionEvent event) {
         try (Connection conn = DBconnection.getConnection()) {
@@ -418,6 +422,7 @@ public class AdminDashboardController implements Initializable {
         System.out.println("Deleting the Event");
     }
 
+//    updating event here
     @FXML
     private void updateEventHere(ActionEvent event) {
         try (Connection conn = DBconnection.getConnection()) {
@@ -462,14 +467,108 @@ public class AdminDashboardController implements Initializable {
         System.out.println("Event has bean Updated");
     }
 
-//    on cell double click stadium table
+// on click cell table of the stadium table    
     @FXML
     private void clickStadiums(MouseEvent event) {
         if (event.getClickCount() == 2) {
-                stadiumFullname.setText(eventTable.getSelectionModel().getSelectedItem().name);
+            stadiumFullname.setText(stadiumTable.getSelectionModel().getSelectedItem().name);
+            stadiumLocation.setText(stadiumTable.getSelectionModel().getSelectedItem().location);
+            stadiumPrice.setText(stadiumTable.getSelectionModel().getSelectedItem().price);
+            stadiumCartegory.setValue(stadiumTable.getSelectionModel().getSelectedItem().Cartegory);
+            stadiumSeats.setText(stadiumTable.getSelectionModel().getSelectedItem().seat);
+            stadiumAccount.setText(stadiumTable.getSelectionModel().getSelectedItem().accNo);
+            stadiumCapacity.setText(stadiumTable.getSelectionModel().getSelectedItem().Capacity);
 
-            }
+            Name = stadiumTable.getSelectionModel().getSelectedItem().name;
+            location = stadiumTable.getSelectionModel().getSelectedItem().location;
+            seats = stadiumTable.getSelectionModel().getSelectedItem().seat;
+            cost = stadiumTable.getSelectionModel().getSelectedItem().price;
+            account = stadiumTable.getSelectionModel().getSelectedItem().accNo;
+            capacity = stadiumTable.getSelectionModel().getSelectedItem().Capacity;
+            cartegory = stadiumTable.getSelectionModel().getSelectedItem().Cartegory;
 
+        }
+    }
+
+//    deleting the stadium here or venu
+    @FXML
+    private void deleteStadiumHere(ActionEvent event) {
+        try (Connection conn = DBconnection.getConnection()) {
+
+            // delete statement
+            String query = "DELETE FROM stadvenu WHERE name=?";
+            // Create the mysql delete prepared statement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, Name);
+
+            // Execute the preparedstatement
+            preparedStmt.execute();
+
+            System.out.println("deleted successfully!!");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Deleted Successfully!!");
+            alert.setTitle("Deleted");
+            alert.setHeaderText(null);
+            alert.show();
+
+            stadiumFullname.setText("");
+            stadiumLocation.setText("");
+            stadiumSeats.setText("");
+            stadiumPrice.setText("");
+            stadiumAccount.setText("");
+            stadiumCapacity.setText("");
+            stadiumCartegory.setValue(null);
+            stadiumTable();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Cannot connect the database!" + e.getMessage());
+        }
+        System.out.println("Deleting the stadium or venu");
+    }
+
+//    update stadium and venues here
+    @FXML
+    private void updateStadiumHere(ActionEvent event) {
+        try (Connection conn = DBconnection.getConnection()) {
+
+            // The mysql insert statement for table users_table
+            String query = "UPDATE stadvenu SET name=?, location=?, seats=?, price=?, capacity=?, cartegory=?, accNo=? where name=?";
+
+            // Create the mysql insert prepared statement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, stadiumFullname.getText());
+            preparedStmt.setString(2, stadiumLocation.getText());
+            preparedStmt.setString(3, stadiumSeats.getText());
+            preparedStmt.setString(4, stadiumPrice.getText());
+            preparedStmt.setString(5, stadiumCapacity.getText());
+            preparedStmt.setString(6, stadiumCartegory.getValue());
+            preparedStmt.setString(7, stadiumAccount.getText());
+            preparedStmt.setString(8, Name);
+
+            // Execute the preparedstatement
+            preparedStmt.execute();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Updated Successfully!!!!");
+            alert.setTitle("Updates");
+            alert.setHeaderText(null);
+            alert.show();
+
+            stadiumFullname.setText("");
+            stadiumLocation.setText("");
+            stadiumSeats.setText("");
+            stadiumPrice.setText("");
+            stadiumAccount.setText("");
+            stadiumCapacity.setText("");
+            stadiumCartegory.setValue(null);
+            stadiumTable();
+
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Cannot connect the database!" + e.getMessage());
+        }
+        System.out.println("Event has bean Updated");
     }
 
 }
