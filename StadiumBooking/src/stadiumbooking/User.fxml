@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.UserController">
    <children>
       <MenuBar layoutX="195.0" layoutY="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -167,7 +167,7 @@
                               <Blend />
                            </effect>
                         </Label>
-                        <TableView fx:id="stadiumTable" layoutX="21.0" layoutY="60.0" prefHeight="433.0" prefWidth="640.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
+                        <TableView fx:id="stadiumTable" layoutX="21.0" layoutY="60.0" onMouseClicked="#stadiumClick" prefHeight="433.0" prefWidth="640.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
                           <columns>
                               <TableColumn fx:id="nameCol" prefWidth="138.0" text="Name" />
                               <TableColumn fx:id="capacityCol" prefWidth="90.0" text="Capacity" />
@@ -184,7 +184,7 @@
                                     <Image url="@img/field2.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="88.0" layoutY="187.0" text="Stadium Name" textFill="WHITE">
+                              <Label fx:id="stadiumLabel" layoutX="88.0" layoutY="187.0" text="Stadium Name" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
@@ -209,22 +209,22 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="158.0" layoutY="224.0" text="Dar-es-salaam" textFill="WHITE">
+                              <Label fx:id="locationLaabel" layoutX="158.0" layoutY="224.0" text="Dar-es-salaam" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="158.0" layoutY="263.0" text="1000people" textFill="WHITE">
+                              <Label fx:id="capacityLabel" layoutX="158.0" layoutY="263.0" text="1000people" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="159.0" layoutY="304.0" text="6000" textFill="WHITE">
+                              <Label fx:id="seatsLabel" layoutX="159.0" layoutY="304.0" text="6000" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="159.0" layoutY="349.0" text="\$200" textFill="WHITE">
+                              <Label fx:id="priceLabel" layoutX="159.0" layoutY="349.0" text="\$200" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
@@ -422,7 +422,7 @@
                                     <Image url="@img/field2.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="86.0" layoutY="233.0" text="Stadium Name" textFill="WHITE">
+                              <Label fx:id="stadiumLabel" layoutX="86.0" layoutY="233.0" text="Stadium Name" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="28.0" />
                                  </font>
@@ -447,22 +447,22 @@
                                     <Font name="Arial" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="178.0" layoutY="276.0" text="Dar-es-salaam" textFill="WHITE">
+                              <Label fx:id="locationLaabel" layoutX="178.0" layoutY="276.0" text="Dar-es-salaam" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="174.0" layoutY="317.0" text="1000people" textFill="WHITE">
+                              <Label fx:id="capacityLabel" layoutX="174.0" layoutY="317.0" text="1000people" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="175.0" layoutY="362.0" text="6000" textFill="WHITE">
+                              <Label fx:id="seatsLabel" layoutX="175.0" layoutY="362.0" text="6000" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="175.0" layoutY="400.0" text="\$200" textFill="WHITE">
+                              <Label fx:id="priceLabel" layoutX="175.0" layoutY="400.0" text="\$200" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
@@ -477,7 +477,7 @@
                                     <Font name="Arial" size="21.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="171.0" layoutY="441.0" text="ASD12345678945" textFill="#b93333">
+                              <Label fx:id="accountLabel" layoutX="171.0" layoutY="441.0" text="ASD12345678945" textFill="#b93333">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>

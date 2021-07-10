@@ -1,4 +1,3 @@
-
 package stadiumbooking;
 
 import java.net.URL;
@@ -17,13 +16,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-
+import static stadiumbooking.AdminDashboardController.LOCAL_DATE;
 
 public class UserController implements Initializable {
 
@@ -107,17 +107,29 @@ public class UserController implements Initializable {
     private TableColumn<stadiumVenue, String> venuPrice;
     @FXML
     private TableColumn<stadiumVenue, String> venuAccount;
-  
+    @FXML
+    private Label stadiumLabel;
+    @FXML
+    private Label locationLaabel;
+    @FXML
+    private Label capacityLabel;
+    @FXML
+    private Label seatsLabel;
+    @FXML
+    private Label priceLabel;
+    @FXML
+    private Label accountLabel;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         try {
+        try {
             stadiumTable();
             eventList();
             venuTable();
         } catch (SQLException ex) {
             Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }  
+    }
 
     @FXML
     private void goHome(MouseEvent event) {
@@ -138,38 +150,38 @@ public class UserController implements Initializable {
 
     @FXML
     private void goStadium(MouseEvent event) {
-         mainTab.getSelectionModel().select(1);
+        mainTab.getSelectionModel().select(1);
 
     }
 
     @FXML
     private void goBookStadium(MouseEvent event) {
-       mainTab.getSelectionModel().select(4);
+        mainTab.getSelectionModel().select(4);
 
     }
 
     @FXML
     private void goBookEvent(MouseEvent event) {
-     mainTab.getSelectionModel().select(6);
+        mainTab.getSelectionModel().select(6);
 
     }
 
     @FXML
     private void goBookVenue(MouseEvent event) {
-      mainTab.getSelectionModel().select(5);
+        mainTab.getSelectionModel().select(5);
 
     }
 
     @FXML
     private void myBookings(MouseEvent event) {
-       mainTab.getSelectionModel().select(7);
+        mainTab.getSelectionModel().select(7);
 
     }
 
 //    booking the event
     @FXML
     private void BookEventNow(ActionEvent event) {
-           try {
+        try {
             if (eventBookerFullname.getText().isEmpty() || eventBookerPhone.getText().isEmpty() || eventBookerSeat.getText().isEmpty() || eventBookerReceipt.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Please Fill All fields!!");
@@ -181,7 +193,6 @@ public class UserController implements Initializable {
                 String phone = eventBookerPhone.getText();
                 String seat = eventBookerSeat.getText();
                 String receipt = eventBookerReceipt.getText();
-                
 
                 eventBooking newBook = new eventBooking(fullname, phone, seat, receipt);
                 newBook.EventBook();
@@ -204,7 +215,7 @@ public class UserController implements Initializable {
 // Booking the venu
     @FXML
     private void BookVenuNow(ActionEvent event) {
-           try {
+        try {
             if (venuBookerFullname.getText().isEmpty() || venuBookerPhone.getText().isEmpty() || venuBookerReceipt.getText().isEmpty() || venuBookerDate.getValue().equals(null)) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Please Fill All fields!!");
@@ -216,7 +227,7 @@ public class UserController implements Initializable {
                 String phone = venuBookerPhone.getText();
                 java.sql.Date date = java.sql.Date.valueOf(venuBookerDate.getValue().toString());
                 String receipt = venuBookerReceipt.getText();
-                
+
                 stadiumVenuBooking newBook = new stadiumVenuBooking(fullname, phone, date, receipt);
                 newBook.BookVenu();
 
@@ -235,11 +246,10 @@ public class UserController implements Initializable {
         }
     }
 
-    
 //    Booking the stadium
     @FXML
     private void BookStadiumHere(ActionEvent event) {
-         try {
+        try {
             if (stadiumBookerFullname.getText().isEmpty() || stadiumBookerPhone.getText().isEmpty() || stadiumBookerReceipt.getText().isEmpty() || stadiumBookerDate.getValue().equals(null)) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Please Fill All fields!!");
@@ -251,7 +261,7 @@ public class UserController implements Initializable {
                 String phone = stadiumBookerPhone.getText();
                 java.sql.Date date = java.sql.Date.valueOf(stadiumBookerDate.getValue().toString());
                 String receipt = stadiumBookerReceipt.getText();
-                
+
                 stadiumVenuBooking newBook = new stadiumVenuBooking(fullname, phone, date, receipt);
                 newBook.BookVenu();
 
@@ -269,7 +279,7 @@ public class UserController implements Initializable {
         } catch (Exception e) {
         }
     }
-    
+
 //    fetch data for the stadium 
     public ObservableList<stadiumVenue> getStadiumList() throws SQLException {
         ObservableList<stadiumVenue> stadiumList = FXCollections.observableArrayList();
@@ -291,9 +301,9 @@ public class UserController implements Initializable {
 
         return stadiumList;
     }
-    
+
 //    assign data to stadium table
-     public void stadiumTable() throws SQLException {
+    public void stadiumTable() throws SQLException {
         ObservableList<stadiumVenue> stad = (ObservableList<stadiumVenue>) getStadiumList();
         nameCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("name"));
         capacityCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("capacity"));
@@ -301,11 +311,10 @@ public class UserController implements Initializable {
         seatsCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("seat"));
         priceCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("price"));
         accountCol.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("accNo"));
-        
+
         stadiumTable.setItems(stad);
     }
-     
-     
+
 //    fetch data for the events
     public ObservableList<events> getEvents() throws SQLException {
         ObservableList<events> eventList = FXCollections.observableArrayList();
@@ -327,11 +336,10 @@ public class UserController implements Initializable {
 
         return eventList;
     }
-    
-    
+
 //    assign the events in table
-     public void eventList() throws SQLException {
-          ObservableList<events> list = (ObservableList<events>) getEvents();
+    public void eventList() throws SQLException {
+        ObservableList<events> list = (ObservableList<events>) getEvents();
         eventCol.setCellValueFactory(new PropertyValueFactory<events, String>("name"));
         eventLocation.setCellValueFactory(new PropertyValueFactory<events, String>("location"));
         eventSeat.setCellValueFactory(new PropertyValueFactory<events, String>("seat"));
@@ -340,11 +348,9 @@ public class UserController implements Initializable {
         eventDate.setCellValueFactory(new PropertyValueFactory<events, String>("date"));
 
         evenTable.setItems(list);
-         
 
     }
-  
-         
+
 //    fetch data for the stadium 
     public ObservableList<stadiumVenue> getVenuList() throws SQLException {
         ObservableList<stadiumVenue> stadiumList = FXCollections.observableArrayList();
@@ -366,9 +372,9 @@ public class UserController implements Initializable {
 
         return stadiumList;
     }
-    
+
 //    assign data to stadium table
-     public void venuTable() throws SQLException {
+    public void venuTable() throws SQLException {
         ObservableList<stadiumVenue> stad = (ObservableList<stadiumVenue>) getVenuList();
         venuName.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("name"));
         venuCapacity.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("capacity"));
@@ -376,9 +382,23 @@ public class UserController implements Initializable {
         venuSeats.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("seat"));
         venuPrice.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("price"));
         venuAccount.setCellValueFactory(new PropertyValueFactory<stadiumVenue, String>("accNo"));
-        
+
         venuTable.setItems(stad);
     }
-     
-     
+
+//     on click the stadiums table
+    @FXML
+    private void stadiumClick(MouseEvent event) {
+        if (event.getClickCount() == 2) //Checking double click
+        {
+//            set selected data to the labels
+            stadiumLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().name);
+            locationLaabel.setText(stadiumTable.getSelectionModel().getSelectedItem().location);
+            seatsLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().seat);
+            priceLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().price);
+//            account = stadiumTable.getSelectionModel().getSelectedItem().accNo;
+            capacityLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().Capacity);
+        }
+    }
+
 }

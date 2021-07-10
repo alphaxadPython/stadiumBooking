@@ -150,9 +150,7 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private TableColumn<stadiumVenue, String> stadiumCartegoryCol;
 
-    /**
-     * Initializes the controller class.
-     */
+//    innitializing data here to load with controller
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
