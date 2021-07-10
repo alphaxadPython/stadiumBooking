@@ -62,11 +62,8 @@ public class SignupController implements Initializable {
                 alert.setTitle("Registered");
                 alert.setHeaderText(null);
                 alert.show();
+                demo(user);
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("User.fxml"));
-                Stage stage = (Stage) signup.getScene().getWindow();
-                Scene scene = new Scene(loader.load());
-                stage.setScene(scene);
             } else {
 
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -75,9 +72,31 @@ public class SignupController implements Initializable {
                 alert.setHeaderText(null);
                 alert.showAndWait();
             }
+        } catch (Exception e) {
+        }
+    }
 
-        } catch (IOException io) {
-            io.printStackTrace();
+//    checking if its admin all user
+    public void demo(String user) throws IOException {
+        if (user.matches("admin")) {
+
+            try {
+                FXMLLoader form = new FXMLLoader(getClass().getResource("AdminDashboard.fxml"));
+                Stage stage = (Stage) signup.getScene().getWindow();
+                Scene scene = new Scene(form.load());
+                stage.setScene(scene);
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        } else {
+          try {
+                FXMLLoader form = new FXMLLoader(getClass().getResource("User.fxml"));
+                Stage stage = (Stage) signup.getScene().getWindow();
+                Scene scene = new Scene(form.load());
+                stage.setScene(scene);
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
         }
     }
 

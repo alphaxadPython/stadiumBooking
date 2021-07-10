@@ -14,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
@@ -36,6 +35,7 @@ public class LoginController implements Initializable {
         // TODO
     }
 
+//    loogin user here
     @FXML
     private void loginUser(MouseEvent event) {
         try {
@@ -61,11 +61,7 @@ public class LoginController implements Initializable {
                     alert.setHeaderText(null);
                     alert.show();
 
-                    Parent loader = FXMLLoader.load(getClass().getResource("User.fxml"));
-                    Stage stage = (Stage) login.getScene().getWindow();
-
-                    Scene scene = new Scene(loader);
-                    stage.setScene(scene);
+                    demo(user);
 
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -87,6 +83,31 @@ public class LoginController implements Initializable {
 
     }
 
+    
+//    checking if its admin all user
+    public void demo(String user) throws IOException {
+        if (user.matches("admin")) {
+
+            try {
+                FXMLLoader form = new FXMLLoader(getClass().getResource("AdminDashboard.fxml"));
+                Stage stage = (Stage) signup.getScene().getWindow();
+                Scene scene = new Scene(form.load());
+                stage.setScene(scene);
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        } else {
+          try {
+                FXMLLoader form = new FXMLLoader(getClass().getResource("User.fxml"));
+                Stage stage = (Stage) signup.getScene().getWindow();
+                Scene scene = new Scene(form.load());
+                stage.setScene(scene);
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        }
+    }
+
     @FXML
     private void SignupForm(MouseEvent event) {
         try {
@@ -99,11 +120,4 @@ public class LoginController implements Initializable {
         }
     }
 
-//    @FXML
-//    private void closeLogin(MouseEvent event) {
-////        close the stage
-//             Stage stage = (Stage) close.getScene().getWindow();
-//            
-//             stage.close();
-//    }
 }

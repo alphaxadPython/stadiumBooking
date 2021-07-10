@@ -174,6 +174,7 @@ public class UserController implements Initializable {
     @FXML
     private Label labelAccountVenu;
 
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -497,8 +498,5 @@ public class UserController implements Initializable {
         }
     }
 
-    
-    public static void demo(){
-            System.out.println("hellow");
-    }
+ 
 }
