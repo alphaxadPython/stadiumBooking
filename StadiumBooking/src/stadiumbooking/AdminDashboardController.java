@@ -116,39 +116,31 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private ComboBox<String> stadiumCartegory;
     @FXML
-    private TableView<?> stadiumBookings;
+    private TableView<stadiumVenuBooking> stadiumBookings;
+  
     @FXML
-    private TableColumn<?, ?> stadBookNoCol;
+    private TableColumn<stadiumVenuBooking, String> stadiumBookUsernameCol;
     @FXML
-    private TableColumn<?, ?> stadiumBookUsernameCol;
+    private TableColumn<stadiumVenuBooking, String> stadiumBookPhoneCol;
     @FXML
-    private TableColumn<?, ?> sadiumVenuBookCol;
+    private TableColumn<stadiumVenuBooking, String> stadiumBookDaeCol;
     @FXML
-    private TableColumn<?, ?> stadiumBookPhoneCol;
-    @FXML
-    private TableColumn<?, ?> stadiumBookDaeCol;
-    @FXML
-    private TableColumn<?, ?> stadiumBookReceiptCol;
-    @FXML
-    private TableColumn<?, ?> stadiumBookStatusCol;
-    @FXML
-    private TableColumn<?, ?> eventBookNoCol;
-    @FXML
-    private TableColumn<?, ?> eventBookUsernameCol;
-    @FXML
-    private TableColumn<?, ?> eventBookNameCol;
-    @FXML
-    private TableColumn<?, ?> eventBookPhoneCol;
-    @FXML
-    private TableColumn<?, ?> eventBookDateCol;
-    @FXML
-    private TableColumn<?, ?> eventBookReceiptCol;
-    @FXML
-    private TableColumn<?, ?> eventBookSaetNOCol;
+    private TableColumn<stadiumVenuBooking, String> stadiumBookReceiptCol;
+
     @FXML
     private TableColumn<events, String> eventDateCol;
     @FXML
     private TableColumn<stadiumVenue, String> stadiumCartegoryCol;
+    @FXML
+    private TableView<eventBooking> eventBookingstableHere;
+    @FXML
+    private TableColumn<eventBooking, String> eventusernameBookCol;
+    @FXML
+    private TableColumn<eventBooking, String> eventPhoneColBook;
+    @FXML
+    private TableColumn<eventBooking, String> eventDateBookCol;
+    @FXML
+    private TableColumn<eventBooking, String> receiptEventBookCol;
 
 //    innitializing data here to load with controller
     @Override
@@ -156,6 +148,8 @@ public class AdminDashboardController implements Initializable {
         try {
             eventsTable();
             stadiumTable();
+            stadiumBookingtable();
+            bookedEventTable();
         } catch (SQLException ex) {
             Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -568,5 +562,70 @@ public class AdminDashboardController implements Initializable {
         }
         System.out.println("Event has bean Updated");
     }
+    
+    //   fetch data for the stadium and venu bookings
+    public ObservableList<stadiumVenuBooking> getstadiumBookings() throws SQLException {
+        ObservableList<stadiumVenuBooking> booklist = FXCollections.observableArrayList();
+        Connection conn = DBconnection.getConnection();
+        String query = "Select * from stadvenubook";
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            stadiumVenuBooking book;
+            while (rs.next()) {
+                book = new stadiumVenuBooking(rs.getString("username"), rs.getString("phone"), rs.getDate("date"), rs.getString("receipt"));
+                booklist.add(book);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
+        return booklist;
+    }
+
+//    fetch data to the table for booking 
+    public void stadiumBookingtable() throws SQLException {
+        ObservableList<stadiumVenuBooking> stad = (ObservableList<stadiumVenuBooking>) getstadiumBookings();
+        stadiumBookUsernameCol.setCellValueFactory(new PropertyValueFactory<stadiumVenuBooking, String>("username"));
+        stadiumBookPhoneCol.setCellValueFactory(new PropertyValueFactory<stadiumVenuBooking, String>("phone"));
+        stadiumBookDaeCol.setCellValueFactory(new PropertyValueFactory<stadiumVenuBooking, String>("date"));
+        stadiumBookReceiptCol.setCellValueFactory(new PropertyValueFactory<stadiumVenuBooking, String>("receipt"));
+      
+        stadiumBookings.setItems(stad);
+    }
+    
+    //    fetch data for Events book
+    public ObservableList<eventBooking> bookedEventList() throws SQLException {
+        ObservableList<eventBooking> eventbooked = FXCollections.observableArrayList();
+        Connection conn = DBconnection.getConnection();
+        String query = "Select * from eventbook";
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            eventBooking booked;
+            while (rs.next()) {
+                booked = new eventBooking(rs.getString("username"), rs.getString("phone"), rs.getString("seat"), rs.getString("receipt"));
+                eventbooked.add(booked);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return eventbooked;
+    }
+
+//    assign data to book event table
+    public void bookedEventTable() throws SQLException {
+        ObservableList<eventBooking> list = (ObservableList<eventBooking>) bookedEventList();
+        eventusernameBookCol.setCellValueFactory(new PropertyValueFactory<eventBooking, String>("username"));
+        eventPhoneColBook.setCellValueFactory(new PropertyValueFactory<eventBooking, String>("phone"));
+        eventDateBookCol.setCellValueFactory(new PropertyValueFactory<eventBooking, String>("date"));
+        receiptEventBookCol.setCellValueFactory(new PropertyValueFactory<eventBooking, String>("receipt"));
+
+        eventBookingstableHere.setItems(list);
+    }
 }

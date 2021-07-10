@@ -84,7 +84,7 @@
         <tabs>
             <Tab text="home">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <Label layoutX="28.0" layoutY="26.0" text="Dashborad:" textFill="#079992">
                            <font>
@@ -98,7 +98,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="stadiumTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="stadiumTotal" layoutX="80.0" layoutY="29.0" text="10" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -112,7 +112,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="venuTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="venuTotal" layoutX="80.0" layoutY="29.0" text="6" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -126,7 +126,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="EventsTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="EventsTotal" layoutX="80.0" layoutY="29.0" text="20" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -140,7 +140,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="stadiumBookingTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="stadiumBookingTotal" layoutX="80.0" layoutY="29.0" text="7" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -154,7 +154,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="VenuBookingTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="VenuBookingTotal" layoutX="80.0" layoutY="29.0" text="8" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -168,7 +168,7 @@
                                     <Font name="Arial Bold" size="21.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="eventBookingTotal" layoutX="80.0" layoutY="29.0" text="99" textFill="#079992">
+                              <Label fx:id="eventBookingTotal" layoutX="80.0" layoutY="29.0" text="32" textFill="#079992">
                                  <font>
                                     <Font name="Arial Bold" size="31.0" />
                                  </font>
@@ -385,13 +385,10 @@
                      <children>
                         <TableView fx:id="stadiumBookings" layoutX="62.0" layoutY="76.0" prefHeight="507.0" prefWidth="909.0">
                            <columns>
-                              <TableColumn fx:id="stadBookNoCol" prefWidth="75.0" text="No" />
-                              <TableColumn fx:id="stadiumBookUsernameCol" prefWidth="138.0" text="Username" />
-                              <TableColumn fx:id="sadiumVenuBookCol" prefWidth="172.0" text="Venu/Stadium" />
-                              <TableColumn fx:id="stadiumBookPhoneCol" prefWidth="140.0" text="Phone" />
-                              <TableColumn fx:id="stadiumBookDaeCol" prefWidth="135.0" text="Date" />
-                              <TableColumn fx:id="stadiumBookReceiptCol" prefWidth="140.0" text="Receipt" />
-                              <TableColumn fx:id="stadiumBookStatusCol" prefWidth="108.0" text="Status" />
+                              <TableColumn fx:id="stadiumBookUsernameCol" prefWidth="301.0" text="Username" />
+                              <TableColumn fx:id="stadiumBookPhoneCol" prefWidth="272.0" text="Phone" />
+                              <TableColumn fx:id="stadiumBookDaeCol" prefWidth="160.0" text="Date" />
+                              <TableColumn fx:id="stadiumBookReceiptCol" prefWidth="175.0" text="Receipt" />
                            </columns>
                         </TableView>
                         <Label layoutX="23.0" layoutY="23.0" text="Stadiums &amp; Venue Bookings:" textFill="#079992">
@@ -408,29 +405,27 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="40.0" layoutY="80.0" prefHeight="507.0" prefWidth="909.0">
-                           <columns>
-                              <TableColumn fx:id="eventBookNoCol" prefWidth="75.0" text="No" />
-                              <TableColumn fx:id="eventBookUsernameCol" prefWidth="138.0" text="Username" />
-                              <TableColumn fx:id="eventBookNameCol" prefWidth="172.0" text="Event" />
-                              <TableColumn fx:id="eventBookPhoneCol" prefWidth="140.0" text="Phone" />
-                              <TableColumn fx:id="eventBookDateCol" prefWidth="135.0" text="Date" />
-                              <TableColumn fx:id="eventBookReceiptCol" prefWidth="140.0" text="Receipt" />
-                              <TableColumn fx:id="eventBookSaetNOCol" prefWidth="108.0" text="seat No" />
-                           </columns>
-                        </TableView>
                         <Label layoutX="22.0" layoutY="29.0" text="Event bookings:" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
                         <Pane layoutY="337.0" prefHeight="40.0" prefWidth="8.0" style="-fx-background-color: #78e08f; -fx-background-radius: 10;" AnchorPane.leftAnchor="-3.0" />
+                        <TableView fx:id="eventBookingstableHere" layoutX="52.0" layoutY="70.0" prefHeight="507.0" prefWidth="909.0">
+                           <columns>
+                              <TableColumn fx:id="eventusernameBookCol" prefWidth="301.0" text="Username" />
+                              <TableColumn fx:id="eventPhoneColBook" prefWidth="272.0" text="Phone" />
+                              <TableColumn fx:id="eventDateBookCol" prefWidth="160.0" text="Date" />
+                              <TableColumn fx:id="receiptEventBookCol" prefWidth="175.0" text="Receipt" />
+                           </columns>
+                        </TableView>
                      </children>
                   </AnchorPane>
               </content>
             </Tab>
         </tabs>
       </TabPane>
+      <Pane layoutX="134.0" layoutY="25.0" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="134.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

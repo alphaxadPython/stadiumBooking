@@ -56,14 +56,13 @@ public class stadiumVenuBooking extends Booking {
     public void setReceipt(String receipt) {
         this.receipt = receipt;
     }
-
     public stadiumVenuBooking(String username, String phone, java.sql.Date date, String receipt) {
         this.username = username;
         this.phone = phone;
         this.date = date;
         this.receipt = receipt;
     }
-
+    
     public void BookVenu() {
         try (Connection conn = DBconnection.getConnection()) {
 

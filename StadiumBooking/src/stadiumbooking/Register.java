@@ -47,6 +47,7 @@ public class Register {
         this.password = password;
     }
 
+//    signup the user here
     public void signUser() {
 
         try (Connection conn = DBconnection.getConnection()) {
@@ -70,6 +71,7 @@ public class Register {
         System.out.println("Data has been sent to users_table");
     }
 
+//    login the user here
     public boolean loginUser(String username, String password) {
         try (Connection conn = DBconnection.getConnection()) {
             // The mysql insert statement for table users_table

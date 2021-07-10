@@ -118,7 +118,61 @@ public class UserController implements Initializable {
     @FXML
     private Label priceLabel;
     @FXML
-    private Label accountLabel;
+    private Label labelStadium;
+    @FXML
+    private Label labelLocation;
+    @FXML
+    private Label labelCapacity;
+    @FXML
+    private Label labelSeats;
+    @FXML
+    private Label labelPrice;
+    @FXML
+    private Label labelAccount;
+    @FXML
+    private Label eventLabel;
+    @FXML
+    private Label eventLocationLabel;
+    @FXML
+    private Label eventDateLabel;
+    @FXML
+    private Label eventSeatsLabel;
+    @FXML
+    private Label eventPriceLabel;
+    @FXML
+    private Label eventNameLabel;
+    @FXML
+    private Label labelEventLocation;
+    @FXML
+    private Label labelEventDate;
+    @FXML
+    private Label labelEventSeats;
+    @FXML
+    private Label labelEventPrice;
+    @FXML
+    private Label labelEventAccount;
+    @FXML
+    private Label venuLabel;
+    @FXML
+    private Label venulocationLabel;
+    @FXML
+    private Label venuCapacityLabel;
+    @FXML
+    private Label venuSeatLabel;
+    @FXML
+    private Label venuPriceLabel;
+    @FXML
+    private Label labelVenu;
+    @FXML
+    private Label labelLocationVenu;
+    @FXML
+    private Label labelCapacityVenu;
+    @FXML
+    private Label labelseatsVenu;
+    @FXML
+    private Label labelPriceVenu;
+    @FXML
+    private Label labelAccountVenu;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -139,45 +193,36 @@ public class UserController implements Initializable {
     @FXML
     private void goEvents(MouseEvent event) {
         mainTab.getSelectionModel().select(2);
-
     }
 
     @FXML
     private void goVenues(MouseEvent event) {
         mainTab.getSelectionModel().select(3);
-
     }
 
     @FXML
     private void goStadium(MouseEvent event) {
         mainTab.getSelectionModel().select(1);
-
     }
 
     @FXML
     private void goBookStadium(MouseEvent event) {
         mainTab.getSelectionModel().select(4);
-
     }
 
     @FXML
     private void goBookEvent(MouseEvent event) {
         mainTab.getSelectionModel().select(6);
-
     }
-
     @FXML
     private void goBookVenue(MouseEvent event) {
         mainTab.getSelectionModel().select(5);
-
     }
 
     @FXML
     private void myBookings(MouseEvent event) {
         mainTab.getSelectionModel().select(7);
-
     }
-
 //    booking the event
     @FXML
     private void BookEventNow(ActionEvent event) {
@@ -245,7 +290,6 @@ public class UserController implements Initializable {
         } catch (Exception e) {
         }
     }
-
 //    Booking the stadium
     @FXML
     private void BookStadiumHere(ActionEvent event) {
@@ -386,6 +430,8 @@ public class UserController implements Initializable {
         venuTable.setItems(stad);
     }
 
+//    tryo valiable to book the stadium with anme
+    public stadiumVenuBooking stadiumName;
 //     on click the stadiums table
     @FXML
     private void stadiumClick(MouseEvent event) {
@@ -396,9 +442,63 @@ public class UserController implements Initializable {
             locationLaabel.setText(stadiumTable.getSelectionModel().getSelectedItem().location);
             seatsLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().seat);
             priceLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().price);
-//            account = stadiumTable.getSelectionModel().getSelectedItem().accNo;
             capacityLabel.setText(stadiumTable.getSelectionModel().getSelectedItem().Capacity);
+//set the values to other labels
+            labelStadium.setText(stadiumTable.getSelectionModel().getSelectedItem().name);
+            labelLocation.setText(stadiumTable.getSelectionModel().getSelectedItem().location);
+            labelSeats.setText(stadiumTable.getSelectionModel().getSelectedItem().seat);
+            labelPrice.setText(stadiumTable.getSelectionModel().getSelectedItem().price);
+            labelCapacity.setText(stadiumTable.getSelectionModel().getSelectedItem().Capacity);
+            labelAccount.setText(stadiumTable.getSelectionModel().getSelectedItem().accNo);
         }
     }
 
+//    onclick events table
+    @FXML
+    private void eventShowClick(MouseEvent event) {
+        if (event.getClickCount() == 2) //Checking double click
+        {
+//            set selected data to the labels
+            eventLabel.setText(evenTable.getSelectionModel().getSelectedItem().name);
+            eventLocationLabel.setText(evenTable.getSelectionModel().getSelectedItem().location);
+            eventSeatsLabel.setText(evenTable.getSelectionModel().getSelectedItem().seat);
+            eventPriceLabel.setText(evenTable.getSelectionModel().getSelectedItem().price);
+            eventDateLabel.setText(evenTable.getSelectionModel().getSelectedItem().date.toString());
+
+            eventNameLabel.setText(evenTable.getSelectionModel().getSelectedItem().name);
+            labelEventLocation.setText(evenTable.getSelectionModel().getSelectedItem().location);
+            labelEventSeats.setText(evenTable.getSelectionModel().getSelectedItem().seat);
+            labelEventPrice.setText(evenTable.getSelectionModel().getSelectedItem().price);
+            labelEventDate.setText(evenTable.getSelectionModel().getSelectedItem().date.toString());
+            labelEventAccount.setText(evenTable.getSelectionModel().getSelectedItem().accNo);
+
+        }
+    }
+
+//    on click show venu in label
+    @FXML
+    private void showVenuClick(MouseEvent event) {
+        if (event.getClickCount() == 2) //Checking double click
+        {
+//            set selected data to the labels
+            venuLabel.setText(venuTable.getSelectionModel().getSelectedItem().name);
+            venulocationLabel.setText(venuTable.getSelectionModel().getSelectedItem().location);
+            venuSeatLabel.setText(venuTable.getSelectionModel().getSelectedItem().seat);
+            venuPriceLabel.setText(venuTable.getSelectionModel().getSelectedItem().price);
+            venuCapacityLabel.setText(venuTable.getSelectionModel().getSelectedItem().Capacity);
+
+            labelVenu.setText(venuTable.getSelectionModel().getSelectedItem().name);
+            labelLocationVenu.setText(venuTable.getSelectionModel().getSelectedItem().location);
+            labelseatsVenu.setText(venuTable.getSelectionModel().getSelectedItem().seat);
+            labelPriceVenu.setText(venuTable.getSelectionModel().getSelectedItem().price);
+            labelCapacityVenu.setText(venuTable.getSelectionModel().getSelectedItem().Capacity);
+            labelAccountVenu.setText(venuTable.getSelectionModel().getSelectedItem().accNo);
+
+        }
+    }
+
+    
+    public static void demo(){
+            System.out.println("hellow");
+    }
 }
