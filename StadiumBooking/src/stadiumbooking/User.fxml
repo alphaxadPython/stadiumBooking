@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stadiumbooking.UserController">
    <children>
       <MenuBar layoutX="195.0" layoutY="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -77,77 +77,77 @@
         <tabs>
           <Tab text="UserHome">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="597.0" prefWidth="992.0">
                      <children>
-                        <Label layoutX="26.0" layoutY="14.0" text="Available Stadiums" textFill="#079992">
+                        <Label layoutX="26.0" layoutY="10.0" text="Available Stadiums" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="26.0" layoutY="218.0" text="Available Venues" textFill="#079992">
+                        <Label layoutX="26.0" layoutY="190.0" text="Available Venues" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="32.0" layoutY="410.0" text="Available Events" textFill="#079992">
+                        <Label layoutX="32.0" layoutY="372.0" text="Available Events" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="40.0" layoutY="62.0" onMouseClicked="#goStadium" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="40.0" layoutY="46.0" onMouseClicked="#goStadium" pickOnBounds="true">
                            <image>
                               <Image url="@img/field1.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="338.0" layoutY="62.0" onMouseClicked="#goStadium" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="338.0" layoutY="46.0" onMouseClicked="#goStadium" pickOnBounds="true">
                            <image>
                               <Image url="@img/field2.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="631.0" layoutY="62.0" onMouseClicked="#goStadium" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="631.0" layoutY="46.0" onMouseClicked="#goStadium" pickOnBounds="true">
                            <image>
                               <Image url="@img/field3.jpg" />
                            </image>
                         </ImageView>
-                        <Button layoutX="748.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#goStadium" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #079992;" text="View All Stadiums" textFill="WHITE" AnchorPane.leftAnchor="748.0" AnchorPane.topAnchor="206.0">
+                        <Button layoutX="747.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#goStadium" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #079992;" text="View All Stadiums" textFill="WHITE" AnchorPane.leftAnchor="747.0" AnchorPane.topAnchor="186.0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="43.0" layoutY="270.0" onMouseClicked="#goVenues" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="43.0" layoutY="233.0" onMouseClicked="#goVenues" pickOnBounds="true">
                            <image>
                               <Image url="@img/venue1.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="341.0" layoutY="270.0" onMouseClicked="#goVenues" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="341.0" layoutY="233.0" onMouseClicked="#goVenues" pickOnBounds="true">
                            <image>
                               <Image url="@img/venu2.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="634.0" layoutY="270.0" onMouseClicked="#goVenues" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="634.0" layoutY="233.0" onMouseClicked="#goVenues" pickOnBounds="true">
                            <image>
                               <Image url="@img/venu3.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="46.0" layoutY="457.0" onMouseClicked="#goEvents" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="46.0" layoutY="419.0" onMouseClicked="#goEvents" pickOnBounds="true">
                            <image>
                               <Image url="@img/event1.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="344.0" layoutY="457.0" onMouseClicked="#goEvents" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="344.0" layoutY="419.0" onMouseClicked="#goEvents" pickOnBounds="true">
                            <image>
                               <Image url="@img/event2.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="637.0" layoutY="457.0" onMouseClicked="#goEvents" pickOnBounds="true">
+                        <ImageView fitHeight="130.0" fitWidth="249.0" layoutX="637.0" layoutY="419.0" onMouseClicked="#goEvents" pickOnBounds="true">
                            <image>
                               <Image url="@img/event4.jpg" />
                            </image>
                         </ImageView>
-                        <Button layoutX="748.0" layoutY="408.0" mnemonicParsing="false" onMouseClicked="#goVenues" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #079992;" text="View All Venues" textFill="WHITE">
+                        <Button layoutX="748.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#goVenues" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #079992;" text="View All Venues" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button layoutX="753.0" layoutY="601.0" mnemonicParsing="false" onMouseClicked="#goEvents" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #079992;" text="View All Events" textFill="WHITE">
+                        <Button layoutX="753.0" layoutY="559.0" mnemonicParsing="false" onMouseClicked="#goEvents" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #079992;" text="View All Events" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
@@ -167,7 +167,7 @@
                               <Blend />
                            </effect>
                         </Label>
-                        <TableView fx:id="stadiumTable" layoutX="21.0" layoutY="60.0" onMouseClicked="#stadiumClick" prefHeight="433.0" prefWidth="640.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
+                        <TableView fx:id="stadiumTable" layoutX="21.0" layoutY="60.0" onMouseClicked="#stadiumClick" prefHeight="427.0" prefWidth="640.0" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="60.0">
                           <columns>
                               <TableColumn fx:id="nameCol" prefWidth="138.0" text="Name" />
                               <TableColumn fx:id="capacityCol" prefWidth="90.0" text="Capacity" />
@@ -235,7 +235,6 @@
                                  </font></Button>
                            </children>
                         </Pane>
-                        <Pane layoutX="2.0" layoutY="544.0" prefHeight="33.0" prefWidth="927.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="128.0" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -410,12 +409,12 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Book This stadium" textFill="#079992">
+                        <Label layoutX="14.0" layoutY="6.0" text="Book This stadium" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Pane layoutX="42.0" layoutY="67.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
+                        <Pane layoutX="42.0" layoutY="49.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
                            <children>
                               <ImageView fitHeight="222.0" fitWidth="357.0" layoutY="-1.0" pickOnBounds="true">
                                  <image>
@@ -484,7 +483,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="490.0" layoutY="67.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
+                        <Pane layoutX="490.0" layoutY="49.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
                            <children>
                               <Label layoutX="95.0" layoutY="26.0" text="Stadium Name Here" textFill="#079992">
                                  <font>
@@ -534,7 +533,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="45.0" layoutY="73.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
+                        <Pane layoutX="45.0" layoutY="52.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
                            <children>
                               <ImageView fitHeight="222.0" fitWidth="357.0" layoutY="-1.0" pickOnBounds="true">
                                  <image>
@@ -603,7 +602,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="464.0" layoutY="75.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
+                        <Pane layoutX="464.0" layoutY="50.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
                            <children>
                               <Label layoutX="95.0" layoutY="26.0" text="Venue name Here" textFill="#079992">
                                  <font>
@@ -646,7 +645,7 @@
                               </ImageView>
                            </children>
                         </Pane>
-                        <Label layoutX="34.0" layoutY="14.0" text="Book This Venue" textFill="#079992">
+                        <Label layoutX="34.0" layoutY="7.0" text="Book This Venue" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
@@ -659,12 +658,12 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="29.0" layoutY="14.0" text="Book Seat In this Event" textFill="#079992">
+                        <Label layoutX="29.0" layoutY="6.0" text="Book Seat In this Event" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Pane layoutX="34.0" layoutY="65.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
+                        <Pane layoutX="34.0" layoutY="40.0" prefHeight="516.0" prefWidth="357.0" style="-fx-background-color: #38ada9;">
                            <children>
                               <ImageView fitHeight="222.0" fitWidth="357.0" layoutY="-1.0" pickOnBounds="true">
                                  <image>
@@ -733,7 +732,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Pane layoutX="454.0" layoutY="66.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
+                        <Pane layoutX="454.0" layoutY="41.0" prefHeight="514.0" prefWidth="368.0" style="-fx-background-color: white; -fx-border-style: dashed;">
                            <children>
                               <Label layoutX="95.0" layoutY="26.0" text="Event Name Here" textFill="#079992">
                                  <font>
@@ -784,12 +783,12 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="29.0" layoutY="21.0" text="My Event Bookings" textFill="#079992">
+                        <Label layoutX="29.0" layoutY="9.0" text="My Event Bookings" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="29.0" layoutY="60.0" prefHeight="146.0" prefWidth="640.0">
+                        <TableView layoutX="29.0" layoutY="48.0" prefHeight="146.0" prefWidth="640.0">
                            <columns>
                               <TableColumn prefWidth="39.0" text="no" />
                               <TableColumn prefWidth="111.0" text="Photo" />
@@ -801,17 +800,17 @@
                               <TableColumn prefWidth="72.0" text="status" />
                            </columns>
                         </TableView>
-                        <Label layoutX="29.0" layoutY="222.0" text="My Venue bookings" textFill="#079992">
+                        <Label layoutX="29.0" layoutY="204.0" text="My Venue bookings" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="29.0" layoutY="445.0" text="My Stadium Bookings" textFill="#079992">
+                        <Label layoutX="29.0" layoutY="407.0" text="My Stadium Bookings" textFill="#079992">
                            <font>
                               <Font name="Arial" size="25.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="29.0" layoutY="265.0" prefHeight="146.0" prefWidth="640.0">
+                        <TableView layoutX="29.0" layoutY="247.0" prefHeight="146.0" prefWidth="640.0">
                            <columns>
                               <TableColumn prefWidth="39.0" text="no" />
                               <TableColumn prefWidth="111.0" text="Photo" />
@@ -823,7 +822,7 @@
                               <TableColumn prefWidth="72.0" text="status" />
                            </columns>
                         </TableView>
-                        <TableView layoutX="29.0" layoutY="481.0" prefHeight="146.0" prefWidth="640.0">
+                        <TableView layoutX="29.0" layoutY="443.0" prefHeight="146.0" prefWidth="640.0">
                            <columns>
                               <TableColumn prefWidth="39.0" text="no" />
                               <TableColumn prefWidth="111.0" text="Photo" />

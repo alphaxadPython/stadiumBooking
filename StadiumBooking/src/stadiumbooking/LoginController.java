@@ -54,12 +54,7 @@ public class LoginController implements Initializable {
                 boolean check = newUser.loginUser(user, pass);
 
                 if (!check) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("Account Doesnt exist");
-                    alert.setTitle("account Error");
-                    alert.setHeaderText(null);
-                    alert.showAndWait();
-                } else {
+
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Login successfully!!");
                     alert.setTitle("Logged!");
@@ -71,6 +66,13 @@ public class LoginController implements Initializable {
 
                     Scene scene = new Scene(loader);
                     stage.setScene(scene);
+
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Account Doesnt exist");
+                    alert.setTitle("account Error");
+                    alert.setHeaderText(null);
+                    alert.showAndWait();
                 }
 
 //            setting stage on center

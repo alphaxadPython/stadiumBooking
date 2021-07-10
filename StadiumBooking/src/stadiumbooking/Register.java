@@ -46,6 +46,8 @@ public class Register {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public String status ="user";
 
 //    signup the user here
     public void signUser() {
@@ -53,13 +55,14 @@ public class Register {
         try (Connection conn = DBconnection.getConnection()) {
 
             // The mysql insert statement for table users_table
-            String query = " insert into signup (username, password, phone)"
-                    + " values (?, ?, ?)";
+            String query = " insert into signup (username, password, phone, status)"
+                    + " values (?, ?, ?, ?)";
             // Create the mysql insert prepared statement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, username);
             preparedStmt.setString(2, password);
             preparedStmt.setString(3, phone);
+            preparedStmt.setString(4,status);
 
             // Execute the preparedstatement
             preparedStmt.execute();
@@ -77,7 +80,7 @@ public class Register {
             // The mysql insert statement for table users_table
             String query = "SELECT * FROM signup where username=? AND password=?";
             // Create the mysql insert prepared statement
-          
+
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, username);
             preparedStmt.setString(2, password);
@@ -85,15 +88,13 @@ public class Register {
             System.out.println(preparedStmt);
 
             ResultSet resultSet = preparedStmt.executeQuery();
-            if (resultSet.next()) {
+            if (!resultSet.next()) {
+               
                 return true;
             }
-         
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
         return false;
     }
 
