@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2021 at 06:28 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.5
+-- Generation Time: Jul 11, 2021 at 01:49 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -67,7 +68,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `location`, `date`, `seats`, `price`, `accNo`) VALUES
-(1, 'demo', 'demo', '2015-03-31', 3455, 3444, 'dfdasfdf343');
+(5, 'Diamond Party', 'uwanja wa mkapa', '2021-07-16', 12345678, 3000, '12300GHFV');
 
 -- --------------------------------------------------------
 
@@ -87,11 +88,7 @@ CREATE TABLE `signup` (
 --
 
 INSERT INTO `signup` (`id`, `username`, `password`, `phone`) VALUES
-(1, 'alpha', '123456789', '123'),
-(2, 'james', '123456789', '12345'),
-(3, 'john', '0987654321', '345'),
-(4, 'akan', '123456789', '123'),
-(5, 'alphonce', '342312', '123');
+(1, 'admin', '123', '1234556789');
 
 -- --------------------------------------------------------
 
@@ -115,8 +112,7 @@ CREATE TABLE `stadvenu` (
 --
 
 INSERT INTO `stadvenu` (`id`, `name`, `location`, `seats`, `price`, `capacity`, `cartegory`, `accNo`) VALUES
-(1, 'kapa', 'dar', 12333, 5000, 1223, 'Stadium', 'ASD54345'),
-(3, 'demo', 'demo', 1223, 1200, 12, 'Venu', 'dfdf343');
+(1, 'kapa', 'dar', 12333, 5000, 1223, 'Stadium', 'ASD54345');
 
 -- --------------------------------------------------------
 
@@ -140,7 +136,8 @@ CREATE TABLE `stadvenubook` (
 
 INSERT INTO `stadvenubook` (`id`, `username`, `stadVenu`, `phone`, `date`, `receipt`, `satatus`) VALUES
 (1, 'alpha', NULL, '123456', '2021-07-06', 'BVG123456', NULL),
-(2, 'james', NULL, '1234555666', '2021-07-02', 'ssdssd3434', NULL);
+(2, 'james', NULL, '1234555666', '2021-07-02', 'ssdssd3434', NULL),
+(3, 'sdasd', NULL, '3213213', '2021-07-21', '123ererqer', NULL);
 
 --
 -- Indexes for dumped tables
@@ -190,13 +187,13 @@ ALTER TABLE `eventbook`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `stadvenu`
@@ -208,7 +205,7 @@ ALTER TABLE `stadvenu`
 -- AUTO_INCREMENT for table `stadvenubook`
 --
 ALTER TABLE `stadvenubook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
